@@ -1,0 +1,20 @@
+import type { BundledLanguage } from 'shiki/bundle/web';
+
+export type PreviewMode = 'preview' | 'code';
+
+export type CodeFile = {
+	name: string;
+	lang: BundledLanguage;
+	code: string;
+};
+
+export type Block = {
+	name: string;
+	category: string;
+	block_number: string;
+	description: string;
+};
+
+export type BlockWithCodeFiles = Block & {
+	codes?: CodeFile[];
+};

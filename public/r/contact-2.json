@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "contact-2",
+  "type": "registry:block",
+  "description": "Modern contact card with info section and built-in form area.",
+  "files": [
+    {
+      "path": "registry/blocks/contact/2/contact-card.tsx",
+      "content": "import React from 'react';\nimport { cn } from '@/lib/utils';\nimport { LucideIcon, PlusIcon } from 'lucide-react';\n\ntype ContactInfoProps = React.ComponentProps<'div'> & {\n\ticon: LucideIcon;\n\tlabel: string;\n\tvalue: string;\n};\n\ntype ContactCardProps = React.ComponentProps<'div'> & {\n\t// Content props\n\ttitle?: string;\n\tdescription?: string;\n\tcontactInfo?: ContactInfoProps[];\n\tformSectionClassName?: string;\n};\n\nexport function ContactCard({\n\ttitle = 'Contact With Us',\n\tdescription = 'If you have any questions regarding our Services or need help, please fill out the form here. We do our best to respond within 1 business day.',\n\tcontactInfo,\n\tclassName,\n\tformSectionClassName,\n\tchildren,\n\t...props\n}: ContactCardProps) {\n\treturn (\n\t\t<div\n\t\t\tclassName={cn(\n\t\t\t\t'bg-muted/20 relative grid h-full w-full border md:grid-cols-2 lg:grid-cols-3',\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t>\n\t\t\t<PlusIcon className=\"absolute -top-3 -left-3 h-6 w-6\" />\n\t\t\t<PlusIcon className=\"absolute -top-3 -right-3 h-6 w-6\" />\n\t\t\t<PlusIcon className=\"absolute -bottom-3 -left-3 h-6 w-6\" />\n\t\t\t<PlusIcon className=\"absolute -right-3 -bottom-3 h-6 w-6\" />\n\n\t\t\t<div className=\"col-span-1 flex flex-col justify-between lg:col-span-2\">\n\t\t\t\t<div className=\"relative h-full space-y-4 px-4 py-8 md:p-8\">\n\t\t\t\t\t<h1 className=\"text-3xl font-bold md:text-4xl lg:text-5xl\">\n\t\t\t\t\t\t{title}\n\t\t\t\t\t</h1>\n\t\t\t\t\t<p className=\"text-muted-foreground max-w-xl text-sm md:text-base lg:text-lg\">\n\t\t\t\t\t\t{description}\n\t\t\t\t\t</p>\n\t\t\t\t\t<div className=\"grid gap-4 md:grid md:grid-cols-2 lg:grid-cols-3\">\n\t\t\t\t\t\t{contactInfo?.map((info, index) => (\n\t\t\t\t\t\t\t<ContactInfo key={index} {...info} />\n\t\t\t\t\t\t))}\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div\n\t\t\t\tclassName={cn(\n\t\t\t\t\t'bg-card col-span-1 flex h-full w-full items-center border-t p-5 md:border-t-0 md:border-l',\n\t\t\t\t\tformSectionClassName,\n\t\t\t\t)}\n\t\t\t>\n\t\t\t\t{children}\n\t\t\t</div>\n\t\t</div>\n\t);\n}\n\nfunction ContactInfo({\n\ticon: Icon,\n\tlabel,\n\tvalue,\n\tclassName,\n\t...props\n}: ContactInfoProps) {\n\treturn (\n\t\t<div className={cn('flex items-center gap-3 py-3', className)} {...props}>\n\t\t\t<div className=\"bg-card rounded-lg border p-3 shadow\">\n\t\t\t\t<Icon className=\"h-5 w-5\" />\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<p className=\"font-medium\">{label}</p>\n\t\t\t\t<p className=\"text-muted-foreground text-xs\">{value}</p>\n\t\t\t</div>\n\t\t</div>\n\t);\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "contact"
+  ]
+}
