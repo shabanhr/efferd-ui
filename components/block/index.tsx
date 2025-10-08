@@ -2,10 +2,9 @@
 
 import React from 'react';
 import { CodeView } from '@/components/block/code-view';
-import { BlockWithCodeFiles } from '@/types';
+import { BlockWithCodeFiles, PreviewMode } from '@/types';
 import { TogglePreviewMode } from './toggle-preview-mode';
 import { RefreshButton } from './refresh-button';
-import { PreviewMode } from '@/types';
 import { OpenInV0Button } from './open-in-v0';
 import { OpenInNewTabButton } from './open-in-new-tab-button';
 import { BlockPreview } from './block-preview';
@@ -22,12 +21,17 @@ type BlockPreviewProps = {
 export function BlockBox({ block }: BlockPreviewProps) {
 	const [previewMode, setPreviewMode] = React.useState<PreviewMode>('preview');
 	const iframeContainerRef = React.useRef<HTMLDivElement>(null);
+	const [registryUrl, setRegistryUrl] = React.useState<string>('');
 
 	const { name, codes } = block;
-
 	const previewLink = `/view/${name}`;
 
-	const registryUrl = new URL(`/r/${name}.json`, window.location.href).toString();
+	React.useEffect(() => {
+		if (typeof window !== 'undefined') {
+			const url = new URL(`/r/${name}.json`, window.location.href).toString();
+			setRegistryUrl(url);
+		}
+	}, [name]);
 
 	const { iframeRef, shouldLoadIframe, onRefreshIframe, isRefreshing } = useOptimizedIframe({
 		previewUrl: previewLink,
@@ -36,9 +40,9 @@ export function BlockBox({ block }: BlockPreviewProps) {
 
 	return (
 		<div id={name} className="border-b border-dashed">
-			{/* Toolbar */}
 			<BorderSeparator className="z-1" />
 
+			{/* Toolbar */}
 			<div className="bg-card relative flex items-center justify-between px-4 py-1.5">
 				<div className="flex items-center gap-3">
 					<TogglePreviewMode
@@ -56,6 +60,7 @@ export function BlockBox({ block }: BlockPreviewProps) {
 					<OpenInNewTabButton previewLink={previewLink} />
 				</div>
 			</div>
+
 			<BorderSeparator className="z-1" />
 
 			{/* Preview */}
