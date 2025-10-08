@@ -8,4 +8,4 @@ Efferd UI is a collection of beautifully crafted Shadcn UI blocks and components
 
 ## License
 
-Licensed under the [MIT license](/LICENSE.md).
+Licensed under the [MIT license](/LICENCE.md).
