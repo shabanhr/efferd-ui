@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { SITE_HOME_URL } from '@/config/site';
-import { getAllCategories } from '@/lib/data';
 import { blocks } from '@/config/blocks';
+import { getAllCategories } from '@/lib/utils/blocks-data';
 
 export const dynamic = 'force-dynamic';
 

@@ -5,7 +5,13 @@ export type PreviewMode = 'preview' | 'code';
 export type CodeFile = {
 	name: string;
 	lang: BundledLanguage;
-	code: string;
+	code: string;	
+};
+
+export type BlockFile = {
+	type: 'page' | 'component' | 'hook';
+	path: string;
+	name: string;
 };
 
 export type Block = {
@@ -13,8 +19,5 @@ export type Block = {
 	category: string;
 	block_number: string;
 	description: string;
-};
-
-export type BlockWithCodeFiles = Block & {
-	codes?: CodeFile[];
+	files: BlockFile[];
 };

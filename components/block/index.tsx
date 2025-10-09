@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { CodeView } from '@/components/block/code-view';
-import { BlockWithCodeFiles, PreviewMode } from '@/types';
+import { Block, PreviewMode } from '@/types';
 import { TogglePreviewMode } from './toggle-preview-mode';
 import { RefreshButton } from './refresh-button';
 import { OpenInV0Button } from './open-in-v0';
@@ -15,7 +15,7 @@ import { BlockLoader } from './block-loader';
 import { BorderSeparator } from '@/components/sheard';
 
 type BlockPreviewProps = {
-	block: BlockWithCodeFiles;
+	block: Block;
 };
 
 export function BlockBox({ block }: BlockPreviewProps) {
@@ -23,7 +23,7 @@ export function BlockBox({ block }: BlockPreviewProps) {
 	const iframeContainerRef = React.useRef<HTMLDivElement>(null);
 	const [registryUrl, setRegistryUrl] = React.useState<string>('');
 
-	const { name, codes } = block;
+	const { name, files } = block;
 	const previewLink = `/view/${name}`;
 
 	React.useEffect(() => {
@@ -80,7 +80,7 @@ export function BlockBox({ block }: BlockPreviewProps) {
 			</BlockPreview>
 
 			{/* Code View */}
-			{previewMode === 'code' && <CodeView name={name} files={codes} />}
+			{previewMode === 'code' && <CodeView name={name} files={files} />}
 		</div>
 	);
 }

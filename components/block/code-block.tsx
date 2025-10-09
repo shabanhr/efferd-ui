@@ -2,18 +2,15 @@
 
 import { cn } from '@/lib/utils';
 import { toJsxRuntime } from 'hast-util-to-jsx-runtime';
-import { JSX, useLayoutEffect, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import type { BundledLanguage, BundledTheme } from 'shiki/bundle/web';
 import { codeToHast } from 'shiki/bundle/web';
 import { BlockLoader } from './block-loader';
 import { useTheme } from 'next-themes';
+import React from 'react';
 
-export async function highlight(
-	code: string,
-	lang: BundledLanguage,
-	theme: BundledTheme,
-) {
+async function highlight(code: string, lang: BundledLanguage, theme: BundledTheme) {
 	const hast = await codeToHast(code, {
 		lang,
 		theme,
@@ -27,49 +24,42 @@ export async function highlight(
 }
 
 interface CodeBlockProps {
-	code: string | null;
-	lang: BundledLanguage;
-	initial?: JSX.Element;
-	preHighlighted?: JSX.Element | null;
+	code: string;
 	className?: string;
 }
 
-export default function CodeBlock({
-	code,
-	lang,
-	initial,
-	preHighlighted,
-	className,
-}: CodeBlockProps) {
-	const [content, setContent] = useState<JSX.Element | null>(
-		preHighlighted || initial || null,
-	);
+const LANG = 'tsx';
+
+export default function CodeBlock({ code, className }: CodeBlockProps) {
+	const [content, setContent] = useState<JSX.Element | null>(null);
+	const [loading, setLoading] = useState(true);
 	const { theme } = useTheme();
 
-	useLayoutEffect(() => {
-		if (preHighlighted) {
-			setContent(preHighlighted);
-			return;
+	useEffect(() => {
+
+		async function loadAndHighlight() {
+			setLoading(true);
+			try {
+				if (code) {
+					const highlighted = await highlight(
+						code,
+						LANG,
+						theme === 'dark' ? 'github-dark' : 'github-light',
+					);
+					setContent(highlighted);
+				} else {
+					setContent(<pre>No code available</pre>);
+				}
+			} catch (err) {
+				console.error('Error loading code:', err);
+				setContent(<pre>Error loading code</pre>);
+			} finally {
+				setLoading(false);
+			}
 		}
 
-		let isMounted = true;
-
-		if (code) {
-			highlight(
-				code,
-				lang,
-				theme === 'dark' ? 'github-dark' : 'github-light',
-			).then((result) => {
-				if (isMounted) setContent(result);
-			});
-		} else {
-			setContent(<pre>No code available</pre>);
-		}
-
-		return () => {
-			isMounted = false;
-		};
-	}, [code, lang, preHighlighted, theme]);
+		loadAndHighlight();
+	}, [code, theme]);
 
 	return (
 		<div
@@ -78,7 +68,7 @@ export default function CodeBlock({
 				className,
 			)}
 		>
-			{content ? content : <BlockLoader />}
+			{loading ? <BlockLoader /> : content}
 		</div>
 	);
 }

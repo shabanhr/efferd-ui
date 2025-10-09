@@ -2,13 +2,13 @@ import React from 'react';
 import { BlockBox } from '@/components/block';
 import { capitalize, unslugify } from '@/lib/utils';
 import { DashedLines } from '@/components/sheard';
-import { getBlocksWithCodeFiles } from '@/lib/data';
 import { constructMetadata } from '@/lib/metadata';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { getCachedBlocksByCategory } from '@/lib/utils/blocks-data';
+import { notFound } from 'next/navigation';
 
 export const dynamic = 'force-static';
-export const revalidate = 3600;
 
 export async function generateMetadata({ params }: PageProps<'/[cat]'>) {
 	const { cat } = await params;
@@ -30,7 +30,11 @@ export async function generateMetadata({ params }: PageProps<'/[cat]'>) {
 export default async function CategoryPage({ params }: PageProps<'/[cat]'>) {
 	const { cat } = await params;
 
-	const categoryBlocks = getBlocksWithCodeFiles(cat);
+	const categoryBlocks = getCachedBlocksByCategory(cat);
+
+	if (categoryBlocks?.length === 0) {
+		return notFound();
+	}
 
 	const catagoryName = capitalize(unslugify(cat)) as string;
 
@@ -47,9 +51,8 @@ export default async function CategoryPage({ params }: PageProps<'/[cat]'>) {
 					Explore {catagoryName} Blocks
 				</h1>
 				<p className="text-muted-foreground text-sm">
-					Discover {categoryBlocks.length} beautifully crafted {catagoryName}{' '}
-					blocks — ready to copy, customize, and drop into your next Shadcn UI
-					project.
+					Discover {categoryBlocks.length} beautifully crafted {catagoryName} blocks — ready to
+					copy, customize, and drop into your next Shadcn UI project.
 				</p>
 			</div>
 

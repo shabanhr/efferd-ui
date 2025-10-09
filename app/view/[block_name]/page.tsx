@@ -1,15 +1,16 @@
-'use server';
 import React from 'react';
 import { constructMetadata } from '@/lib/metadata';
 import { BlockLoader } from '@/components/block/block-loader';
 import { capitalize, unslugify } from '@/lib/utils';
 import { notFound } from 'next/navigation';
-import { findBlockByName, importBlockIndex } from '@/lib/data';
+import { getCachedBlockByName, importBlockIndex } from '@/lib/utils/blocks-data';
+
+export const dynamic = 'force-static';
 
 export async function generateMetadata({ params }: PageProps<'/view/[block_name]'>) {
 	const { block_name } = await params;
 
-	const block = findBlockByName(block_name);
+	const block = getCachedBlockByName(block_name);
 	if (!block) return null;
 
 	const blockName = capitalize(unslugify(block_name));
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: PageProps<'/view/[block_name]
 export default async function PreviewPage({ params }: PageProps<'/view/[block_name]'>) {
 	const { block_name } = await params;
 
-	const block = findBlockByName(block_name);
+	const block = getCachedBlockByName(block_name);
 	if (!block) return notFound();
 
 	const Block = importBlockIndex(block.category, block.block_number);
@@ -32,7 +33,7 @@ export default async function PreviewPage({ params }: PageProps<'/view/[block_na
 	const LazyBlock = React.lazy(Block);
 
 	return (
-		<React.Suspense fallback={<BlockLoader />}>
+		<React.Suspense fallback={<BlockLoader className="h-svh" />}>
 			<LazyBlock />
 		</React.Suspense>
 	);
