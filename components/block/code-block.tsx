@@ -1,66 +1,58 @@
 'use client';
-
+import React, { JSX, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { toJsxRuntime } from 'hast-util-to-jsx-runtime';
-import { JSX, useEffect, useState } from 'react';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import type { BundledLanguage, BundledTheme } from 'shiki/bundle/web';
 import { codeToHast } from 'shiki/bundle/web';
 import { BlockLoader } from './block-loader';
 import { useTheme } from 'next-themes';
-import React from 'react';
 
 async function highlight(code: string, lang: BundledLanguage, theme: BundledTheme) {
-	const hast = await codeToHast(code, {
-		lang,
-		theme,
-	});
-
-	return toJsxRuntime(hast, {
-		Fragment,
-		jsx,
-		jsxs,
-	}) as JSX.Element;
+	const hast = await codeToHast(code, { lang, theme });
+	return toJsxRuntime(hast, { Fragment, jsx, jsxs }) as JSX.Element;
 }
 
 interface CodeBlockProps {
 	code: string;
 	className?: string;
+	isFetching?: boolean;
 }
 
 const LANG = 'tsx';
 
-export default function CodeBlock({ code, className }: CodeBlockProps) {
+export default function CodeBlock({ code, className, isFetching }: CodeBlockProps) {
 	const [content, setContent] = useState<JSX.Element | null>(null);
-	const [loading, setLoading] = useState(true);
 	const { theme } = useTheme();
 
 	useEffect(() => {
+		let active = true;
 
 		async function loadAndHighlight() {
-			setLoading(true);
+			if (!code) {
+				setContent(null); // ✅ Don't render "No code available" right away
+				return;
+			}
+
 			try {
-				if (code) {
-					const highlighted = await highlight(
-						code,
-						LANG,
-						theme === 'dark' ? 'github-dark' : 'github-light',
-					);
-					setContent(highlighted);
-				} else {
-					setContent(<pre>No code available</pre>);
-				}
+				const highlighted = await highlight(
+					code,
+					LANG,
+					theme === 'dark' ? 'github-dark' : 'github-light',
+				);
+				if (active) setContent(highlighted);
 			} catch (err) {
 				console.error('Error loading code:', err);
-				setContent(<pre>Error loading code</pre>);
-			} finally {
-				setLoading(false);
+				if (active) setContent(<pre>Error loading code</pre>);
 			}
 		}
 
 		loadAndHighlight();
+		return () => {
+			active = false;
+		};
 	}, [code, theme]);
-
+	
 	return (
 		<div
 			className={cn(
@@ -68,7 +60,7 @@ export default function CodeBlock({ code, className }: CodeBlockProps) {
 				className,
 			)}
 		>
-			{loading ? <BlockLoader /> : content}
+			{isFetching ? <BlockLoader /> : content}
 		</div>
 	);
 }

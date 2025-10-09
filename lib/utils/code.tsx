@@ -1,7 +1,6 @@
 'use server';
 import fs from 'fs';
 import path from 'path';
-import { cache } from 'react';
 
 async function readFileContent(filePath: string): Promise<string | null> {
 	try {
@@ -26,7 +25,4 @@ export const loadCode = async (filePath: string): Promise<string> => {
 	const fullPath = path.join(process.cwd(), filePath);
 	const content = await readFileContent(fullPath);
 	return content ? normalizeImports(content.trim()) : '// Code not found';
-};
-
-export const loadCachedCodeFile = cache(loadCode);
-	
+};	

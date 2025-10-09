@@ -16,8 +16,7 @@ import {
 import { ReactIcon } from '@/components/icons';
 import { CopyButton } from '../copy-button';
 import { sendGAEvent } from '@next/third-parties/google';
-import { BlockLoader } from './block-loader';
-import { loadCachedCodeFile } from '@/lib/utils/code';
+import { loadCode } from '@/lib/utils/code';
 
 const DEFAULT_FILE_NAME = 'page.tsx';
 
@@ -102,7 +101,7 @@ export function CodeView({ files, name }: CodeViewProps) {
 
 		async function fetchCode() {
 			try {
-				const code = await loadCachedCodeFile(resolvedPath);
+				const code = await loadCode(resolvedPath);
 				if (!active) return;
 				codeCache.current.set(resolvedPath, code);
 				setCurrentCode(code);
@@ -218,7 +217,7 @@ export function CodeView({ files, name }: CodeViewProps) {
 						{currentFile?.name ?? 'Select a file'}
 					</h3>
 					<CopyButton
-						disabled={!currentCode || isFetching}
+						disabled={!currentCode}
 						text={currentCode}
 						onClick={() =>
 							sendGAEvent('event', 'copy_code', {
@@ -229,13 +228,12 @@ export function CodeView({ files, name }: CodeViewProps) {
 					/>
 				</div>
 
-				<React.Suspense fallback={<BlockLoader />}>
-					<CodeBlock
-						key={currentFile?.path ?? 'empty'}
-						code={currentCode}
-						className="h-[calc(100%-2.5rem)] max-w-full overflow-auto"
-					/>
-				</React.Suspense>
+				<CodeBlock
+					key={currentFile?.path ?? 'empty'}
+					code={currentCode}
+					isFetching={isFetching}
+					className="h-[calc(100%-2.5rem)] max-w-full overflow-auto"
+				/>
 			</div>
 		</div>
 	);
