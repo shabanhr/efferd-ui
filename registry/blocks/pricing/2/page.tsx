@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import * as PricingCard from './pricing-card';
+import * as PricingCard from '@/components/pricing-card';
 import { CheckCircle2, XCircleIcon, Users } from 'lucide-react';
 
 export default function Page() {

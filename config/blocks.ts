@@ -215,6 +215,62 @@ export const blocks: Block[] = [
     ]
   },
   {
+    "name": "header-1",
+    "category": "header",
+    "description": "Responsive sticky header with scroll blur effect, animated mobile menu, and adaptive navigation links.",
+    "block_number": "1",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/header/1/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "header.tsx",
+        "path": "registry/blocks/header/1/header.tsx"
+      },
+      {
+        "type": "component",
+        "name": "logo.tsx",
+        "path": "components/logo.tsx"
+      },
+      {
+        "type": "hook",
+        "name": "use-scroll.ts",
+        "path": "hooks/use-scroll.ts"
+      }
+    ]
+  },
+  {
+    "name": "header-2",
+    "category": "header",
+    "description": "Elegant responsive header with scroll-based styling, mobile drawer menu, and smooth transitions.",
+    "block_number": "2",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/header/2/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "header.tsx",
+        "path": "registry/blocks/header/2/header.tsx"
+      },
+      {
+        "type": "component",
+        "name": "logo.tsx",
+        "path": "components/logo.tsx"
+      },
+      {
+        "type": "hook",
+        "name": "use-scroll.ts",
+        "path": "hooks/use-scroll.ts"
+      }
+    ]
+  },
+  {
     "name": "image-gallery-1",
     "category": "image-gallery",
     "description": "Masonry-style responsive gallery using random images with dynamic aspect ratios.",
@@ -274,7 +330,7 @@ export const blocks: Block[] = [
       {
         "type": "component",
         "name": "pricing-card.tsx",
-        "path": "registry/blocks/pricing/2/pricing-card.tsx"
+        "path": "components/pricing-card.tsx"
       }
     ]
   },
@@ -297,7 +353,7 @@ export const blocks: Block[] = [
       {
         "type": "component",
         "name": "pricing-card.tsx",
-        "path": "registry/blocks/pricing/3/pricing-card.tsx"
+        "path": "components/pricing-card.tsx"
       }
     ]
   },

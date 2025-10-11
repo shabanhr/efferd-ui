@@ -215,6 +215,56 @@
       ]
     },
     {
+      "name": "header-1",
+      "type": "registry:block",
+      "description": "Responsive sticky header with scroll blur effect, animated mobile menu, and adaptive navigation links.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/header/1/header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "hooks/use-scroll.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "categories": [
+        "header"
+      ]
+    },
+    {
+      "name": "header-2",
+      "type": "registry:block",
+      "description": "Elegant responsive header with scroll-based styling, mobile drawer menu, and smooth transitions.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/header/2/header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "hooks/use-scroll.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "categories": [
+        "header"
+      ]
+    },
+    {
       "name": "image-gallery-1",
       "type": "registry:block",
       "description": "Masonry-style responsive gallery using random images with dynamic aspect ratios.",
@@ -269,7 +319,7 @@
       "description": "Modular pricing card UI kit with reusable glass-style components and typography helpers.",
       "files": [
         {
-          "path": "registry/blocks/pricing/2/pricing-card.tsx",
+          "path": "components/pricing-card.tsx",
           "type": "registry:component"
         }
       ],
@@ -290,7 +340,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/blocks/pricing/3/pricing-card.tsx",
+          "path": "components/pricing-card.tsx",
           "type": "registry:component"
         }
       ],

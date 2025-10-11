@@ -4,8 +4,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'auth-1',
 		type: 'registry:block',
-		description:
-			'Modern auth page with particle background and social login buttons.',
+		description: 'Modern auth page with particle background and social login buttons.',
 		registryDependencies: ['button', '@magicui/particles'],
 		files: [
 			{
@@ -22,8 +21,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'auth-2',
 		type: 'registry:block',
-		description:
-			'Modern auth page with testimonial sidebar, social logins, and email signup.',
+		description: 'Modern auth page with testimonial sidebar, social logins, and email signup.',
 		registryDependencies: ['button', 'input-group'],
 		dependencies: ['motion'],
 		files: [
@@ -45,8 +43,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'contact-1',
 		type: 'registry:block',
-		description:
-			'Elegant contact page with office info, email, phone, and social links.',
+		description: 'Elegant contact page with office info, email, phone, and social links.',
 		files: [
 			{
 				path: 'blocks/contact/1/contact.tsx',
@@ -58,8 +55,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'contact-2',
 		type: 'registry:block',
-		description:
-			'Modern contact card with info section and built-in form area.',
+		description: 'Modern contact card with info section and built-in form area.',
 		files: [
 			{
 				path: 'blocks/contact/2/contact-card.tsx',
@@ -71,8 +67,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'feature-1',
 		type: 'registry:block',
-		description:
-			'Minimal feature card with icon, title, and subtle grid background.',
+		description: 'Minimal feature card with icon, title, and subtle grid background.',
 		registryDependencies: ['@magicui/grid-pattern'],
 		dependencies: ['motion'],
 		files: [
@@ -86,8 +81,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'footer-1',
 		type: 'registry:block',
-		description:
-			'Clean footer with company links, resources, and social icons.',
+		description: 'Clean footer with company links, resources, and social icons.',
 		registryDependencies: ['button'],
 		files: [
 			{
@@ -104,8 +98,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'footer-2',
 		type: 'registry:block',
-		description:
-			'Animated footer with link sections, brand logo, and social icons.',
+		description: 'Animated footer with link sections, brand logo, and social icons.',
 		dependencies: ['motion'],
 		files: [
 			{
@@ -122,8 +115,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'footer-3',
 		type: 'registry:block',
-		description:
-			'Grid-based footer with social cards, link groups, and copyright bar.',
+		description: 'Grid-based footer with social cards, link groups, and copyright bar.',
 		files: [
 			{
 				path: 'blocks/footer/3/footer.tsx',
@@ -135,8 +127,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'footer-4',
 		type: 'registry:block',
-		description:
-			'Multi-column footer with app store buttons, social icons, and link groups.',
+		description: 'Multi-column footer with app store buttons, social icons, and link groups.',
 		registryDependencies: ['button'],
 		files: [
 			{
@@ -166,10 +157,53 @@ export const blocks: RegistryItem[] = [
 		categories: ['footer'],
 	},
 	{
-		name: 'image-gallery-1',
+		name: 'header-1',
 		type: 'registry:block',
 		description:
-			'Masonry-style responsive gallery using random images with dynamic aspect ratios.',
+			'Responsive sticky header with scroll blur effect, animated mobile menu, and adaptive navigation links.',
+		registryDependencies: ['button'],
+		files: [
+			{
+				path: 'blocks/header/1/header.tsx',
+				type: 'registry:component',
+			},
+			{
+				path: '@/components/logo.tsx',
+				type: 'registry:component',
+			},
+			{
+				path: '@/hooks/use-scroll.ts',
+				type: 'registry:hook',
+			},
+		],
+		categories: ['header'],
+	},
+	{
+		name: 'header-2',
+		type: 'registry:block',
+		description:
+			'Elegant responsive header with scroll-based styling, mobile drawer menu, and smooth transitions.',
+		registryDependencies: ['button'],
+		files: [
+			{
+				path: 'blocks/header/2/header.tsx',
+				type: 'registry:component',
+			},
+			{
+				path: '@/components/logo.tsx',
+				type: 'registry:component',
+			},
+			{
+				path: '@/hooks/use-scroll.ts',
+				type: 'registry:hook',
+			},
+		],
+		categories: ['header'],
+	},
+	{
+		name: 'image-gallery-1',
+		type: 'registry:block',
+		description: 'Masonry-style responsive gallery using random images with dynamic aspect ratios.',
 		dependencies: ['motion'],
 		registryDependencies: ['aspect-ratio'],
 		files: [
@@ -210,7 +244,7 @@ export const blocks: RegistryItem[] = [
 			'Modular pricing card UI kit with reusable glass-style components and typography helpers.',
 		files: [
 			{
-				path: 'blocks/pricing/2/pricing-card.tsx',
+				path: '@/components/pricing-card.tsx',
 				type: 'registry:component',
 			},
 		],
@@ -219,8 +253,7 @@ export const blocks: RegistryItem[] = [
 	{
 		name: 'pricing-3',
 		type: 'registry:block',
-		description:
-			'Three-tier pricing grid with interactive plan cards, badges, and feature lists.',
+		description: 'Three-tier pricing grid with interactive plan cards, badges, and feature lists.',
 		registryDependencies: ['button'],
 		files: [
 			{
@@ -228,7 +261,7 @@ export const blocks: RegistryItem[] = [
 				type: 'registry:component',
 			},
 			{
-				path: 'blocks/pricing/3/pricing-card.tsx',
+				path: '@/components/pricing-card.tsx',
 				type: 'registry:component',
 			},
 		],
