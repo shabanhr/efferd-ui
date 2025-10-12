@@ -5,6 +5,7 @@ import { WordmarkIcon } from '@/components/logo';
 import { useScroll } from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/menu-toggle-icon';
+import { createPortal } from 'react-dom';
 
 export function Header() {
 	const [open, setOpen] = React.useState(false);
@@ -46,8 +47,7 @@ export function Header() {
 				'sticky top-0 z-50 mx-auto w-full max-w-5xl border-b border-transparent md:rounded-md md:border md:transition-all md:ease-out',
 				{
 					'bg-background/95 supports-[backdrop-filter]:bg-background/50 border-border backdrop-blur-lg md:top-4 md:max-w-4xl md:shadow':
-						scrolled && !open,
-					'bg-background/90': open,
+						scrolled,
 				},
 			)}
 		>
@@ -74,41 +74,59 @@ export function Header() {
 				</Button>
 			</nav>
 
-			<div
-				className={cn(
-					'bg-background/90 fixed top-14 right-0 bottom-0 left-0 z-50 flex flex-col overflow-hidden border-y md:hidden',
-					open ? 'block' : 'hidden',
-				)}
-			>
-				<div
-					data-slot={open ? 'open' : 'closed'}
-					className={cn(
-						'data-[slot=open]:animate-in data-[slot=open]:zoom-in-95 data-[slot=closed]:animate-out data-[slot=closed]:zoom-out-95 ease-out',
-						'flex h-full w-full flex-col justify-between gap-y-2 p-4',
-					)}
-				>
-					<div className="grid gap-y-2">
-						{links.map((link) => (
-							<a
-								key={link.label}
-								className={buttonVariants({
-									variant: 'ghost',
-									className: 'justify-start',
-								})}
-								href={link.href}
-							>
-								{link.label}
-							</a>
-						))}
-					</div>
-					<div className="flex flex-col gap-2">
-						<Button variant="outline" className="w-full">
-							Sign In
-						</Button>
-						<Button className="w-full">Get Started</Button>
-					</div>
+			<MobileMenu open={open} className="flex flex-col justify-between gap-2">
+				<div className="grid gap-y-2">
+					{links.map((link) => (
+						<a
+							key={link.label}
+							className={buttonVariants({
+								variant: 'ghost',
+								className: 'justify-start',
+							})}
+							href={link.href}
+						>
+							{link.label}
+						</a>
+					))}
 				</div>
-			</div>
+				<div className="flex flex-col gap-2">
+					<Button variant="outline" className="w-full bg-transparent">
+						Sign In
+					</Button>
+					<Button className="w-full">Get Started</Button>
+				</div>
+			</MobileMenu>
 		</header>
+	);
+}
+
+type MobileMenuProps = React.ComponentProps<'div'> & {
+	open: boolean;
+};
+
+function MobileMenu({ open, children, className, ...props }: MobileMenuProps) {
+	if (!open || typeof window === 'undefined') return null;
+
+	return createPortal(
+		<div
+			id="mobile-menu"
+			className={cn(
+				'bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg',
+				'fixed top-14 right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden border-y md:hidden',
+			)}
+		>
+			<div
+				data-slot={open ? 'open' : 'closed'}
+				className={cn(
+					'data-[slot=open]:animate-in data-[slot=open]:zoom-in-97 ease-out',
+					'size-full p-4',
+					className,
+				)}
+				{...props}
+			>
+				{children}
+			</div>
+		</div>,
+		document.body,
 	);
 }
