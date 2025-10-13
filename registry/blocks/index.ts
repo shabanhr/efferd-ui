@@ -172,6 +172,10 @@ export const blocks: RegistryItem[] = [
 				type: 'registry:component',
 			},
 			{
+				path: '@/components/menu-toggle-icon.tsx',
+				type: 'registry:component',
+			},
+			{
 				path: '@/hooks/use-scroll.ts',
 				type: 'registry:hook',
 			},
@@ -191,6 +195,36 @@ export const blocks: RegistryItem[] = [
 			},
 			{
 				path: '@/components/logo.tsx',
+				type: 'registry:component',
+			},
+			{
+				path: '@/components/menu-toggle-icon.tsx',
+				type: 'registry:component',
+			},
+			{
+				path: '@/hooks/use-scroll.ts',
+				type: 'registry:hook',
+			},
+		],
+		categories: ['header'],
+	},
+	{
+		name: 'header-3',
+		type: 'registry:block',
+		description:
+			'Feature-rich responsive header with scroll blur, animated mobile drawer, and nested navigation menus.',
+		registryDependencies: ['button', 'navigation-menu'],
+		files: [
+			{
+				path: 'blocks/header/3/header.tsx',
+				type: 'registry:component',
+			},
+			{
+				path: '@/components/logo.tsx',
+				type: 'registry:component',
+			},
+			{
+				path: '@/components/menu-toggle-icon.tsx',
 				type: 'registry:component',
 			},
 			{

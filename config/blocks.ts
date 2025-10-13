@@ -236,6 +236,11 @@ export const blocks: Block[] = [
         "path": "components/logo.tsx"
       },
       {
+        "type": "component",
+        "name": "menu-toggle-icon.tsx",
+        "path": "components/menu-toggle-icon.tsx"
+      },
+      {
         "type": "hook",
         "name": "use-scroll.ts",
         "path": "hooks/use-scroll.ts"
@@ -262,6 +267,44 @@ export const blocks: Block[] = [
         "type": "component",
         "name": "logo.tsx",
         "path": "components/logo.tsx"
+      },
+      {
+        "type": "component",
+        "name": "menu-toggle-icon.tsx",
+        "path": "components/menu-toggle-icon.tsx"
+      },
+      {
+        "type": "hook",
+        "name": "use-scroll.ts",
+        "path": "hooks/use-scroll.ts"
+      }
+    ]
+  },
+  {
+    "name": "header-3",
+    "category": "header",
+    "description": "Feature-rich responsive header with scroll blur, animated mobile drawer, and nested navigation menus.",
+    "block_number": "3",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/header/3/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "header.tsx",
+        "path": "registry/blocks/header/3/header.tsx"
+      },
+      {
+        "type": "component",
+        "name": "logo.tsx",
+        "path": "components/logo.tsx"
+      },
+      {
+        "type": "component",
+        "name": "menu-toggle-icon.tsx",
+        "path": "components/menu-toggle-icon.tsx"
       },
       {
         "type": "hook",
