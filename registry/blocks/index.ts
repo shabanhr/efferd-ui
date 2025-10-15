@@ -2,6 +2,35 @@ import { type RegistryItem } from 'shadcn/schema';
 
 export const blocks: RegistryItem[] = [
 	{
+		name: '404-1',
+		type: 'registry:block',
+		description:
+			'Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.',
+		registryDependencies: ['button', 'empty'],
+		files: [
+			{
+				path: 'blocks/404/1/not-found.tsx',
+				type: 'registry:component',
+			},
+		],
+		categories: ['404'],
+	},
+	{
+		name: '404-2',
+		type: 'registry:block',
+		description:
+			'Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.',
+		registryDependencies: ['button', 'empty'],
+		dependencies: ['motion'],
+		files: [
+			{
+				path: 'blocks/404/2/not-found.tsx',
+				type: 'registry:component',
+			},
+		],
+		categories: ['404'],
+	},
+	{
 		name: 'auth-1',
 		type: 'registry:block',
 		description: 'Modern auth page with particle background and social login buttons.',

@@ -5,6 +5,42 @@ import { Block } from '@/types';
 
 export const blocks: Block[] = [
   {
+    "name": "404-1",
+    "category": "404",
+    "description": "Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.",
+    "block_number": "1",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/404/1/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "not-found.tsx",
+        "path": "registry/blocks/404/1/not-found.tsx"
+      }
+    ]
+  },
+  {
+    "name": "404-2",
+    "category": "404",
+    "description": "Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.",
+    "block_number": "2",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/404/2/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "not-found.tsx",
+        "path": "registry/blocks/404/2/not-found.tsx"
+      }
+    ]
+  },
+  {
     "name": "auth-1",
     "category": "auth",
     "description": "Modern auth page with particle background and social login buttons.",
