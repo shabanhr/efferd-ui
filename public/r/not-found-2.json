@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "404-2",
+  "name": "not-found-2",
   "type": "registry:block",
   "description": "Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.",
   "dependencies": [
@@ -12,12 +12,12 @@
   ],
   "files": [
     {
-      "path": "registry/blocks/404/2/not-found.tsx",
+      "path": "registry/blocks/not-found/2/not-found.tsx",
       "content": "'use client';\n\nimport { Compass, Home } from 'lucide-react';\nimport { motion } from 'motion/react';\nimport { Button } from '@/components/ui/button';\nimport {\n\tEmpty,\n\tEmptyContent,\n\tEmptyDescription,\n\tEmptyHeader,\n\tEmptyTitle,\n} from '@/components/ui/empty';\n\nconst PRIMARY_ORB_HORIZONTAL_OFFSET = 40;\nconst PRIMARY_ORB_VERTICAL_OFFSET = 20;\n\nexport function NotFoundPage() {\n\treturn (\n\t\t<div className=\"relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.1),transparent_70%)] text-[var(--foreground)]\">\n\t\t\t<div aria-hidden={true} className=\"absolute inset-0 -z-10 overflow-hidden\">\n\t\t\t\t<motion.div\n\t\t\t\t\tanimate={{\n\t\t\t\t\t\tx: [0, PRIMARY_ORB_HORIZONTAL_OFFSET, -PRIMARY_ORB_HORIZONTAL_OFFSET, 0],\n\t\t\t\t\t\ty: [0, PRIMARY_ORB_VERTICAL_OFFSET, -PRIMARY_ORB_VERTICAL_OFFSET, 0],\n\t\t\t\t\t\trotate: [0, 10, -10, 0],\n\t\t\t\t\t}}\n\t\t\t\t\tclassName=\"absolute top-1/2 left-1/3 h-64 w-64 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-3xl\"\n\t\t\t\t\ttransition={{\n\t\t\t\t\t\trepeat: Number.POSITIVE_INFINITY,\n\t\t\t\t\t\tduration: 5,\n\t\t\t\t\t\tease: 'easeInOut',\n\t\t\t\t\t}}\n\t\t\t\t/>\n\t\t\t\t<motion.div\n\t\t\t\t\tanimate={{\n\t\t\t\t\t\tx: [0, -PRIMARY_ORB_HORIZONTAL_OFFSET, PRIMARY_ORB_HORIZONTAL_OFFSET, 0],\n\t\t\t\t\t\ty: [0, -PRIMARY_ORB_VERTICAL_OFFSET, PRIMARY_ORB_VERTICAL_OFFSET, 0],\n\t\t\t\t\t}}\n\t\t\t\t\tclassName=\"absolute right-1/4 bottom-1/3 h-72 w-72 rounded-full bg-gradient-to-br from-indigo-400/10 to-pink-400/10 blur-3xl\"\n\t\t\t\t\ttransition={{\n\t\t\t\t\t\trepeat: Number.POSITIVE_INFINITY,\n\t\t\t\t\t\tduration: 5,\n\t\t\t\t\t\tease: 'easeInOut',\n\t\t\t\t\t}}\n\t\t\t\t/>\n\t\t\t</div>\n\n\t\t\t<Empty>\n\t\t\t\t<EmptyHeader>\n\t\t\t\t\t<EmptyTitle className=\"text-8xl font-extrabold\">404</EmptyTitle>\n\t\t\t\t\t<EmptyDescription className=\"text-nowrap\">\n\t\t\t\t\t\tThe page you're looking for might have been <br />\n\t\t\t\t\t\tmoved or doesn't exist.\n\t\t\t\t\t</EmptyDescription>\n\t\t\t\t</EmptyHeader>\n\t\t\t\t<EmptyContent>\n\t\t\t\t\t<div className=\"flex gap-2\">\n\t\t\t\t\t\t<Button asChild>\n\t\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t\t<Home /> Go Home\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</Button>\n\n\t\t\t\t\t\t<Button asChild variant=\"outline\">\n\t\t\t\t\t\t\t<a href=\"#\">\n\t\t\t\t\t\t\t\t<Compass /> Explore\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</Button>\n\t\t\t\t\t</div>\n\t\t\t\t</EmptyContent>\n\t\t\t</Empty>\n\t\t</div>\n\t);\n}\n",
       "type": "registry:component"
     }
   ],
   "categories": [
-    "404"
+    "not-found"
   ]
 }

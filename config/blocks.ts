@@ -5,38 +5,38 @@ import { Block } from '@/types';
 
 export const blocks: Block[] = [
   {
-    "name": "404-1",
-    "category": "404",
+    "name": "not-found-1",
+    "category": "not-found",
     "description": "Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.",
     "block_number": "1",
     "files": [
       {
         "type": "page",
         "name": "page.tsx",
-        "path": "registry/blocks/404/1/page.tsx"
+        "path": "registry/blocks/not-found/1/page.tsx"
       },
       {
         "type": "component",
         "name": "not-found.tsx",
-        "path": "registry/blocks/404/1/not-found.tsx"
+        "path": "registry/blocks/not-found/1/not-found.tsx"
       }
     ]
   },
   {
-    "name": "404-2",
-    "category": "404",
+    "name": "not-found-2",
+    "category": "not-found",
     "description": "Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.",
     "block_number": "2",
     "files": [
       {
         "type": "page",
         "name": "page.tsx",
-        "path": "registry/blocks/404/2/page.tsx"
+        "path": "registry/blocks/not-found/2/page.tsx"
       },
       {
         "type": "component",
         "name": "not-found.tsx",
-        "path": "registry/blocks/404/2/not-found.tsx"
+        "path": "registry/blocks/not-found/2/not-found.tsx"
       }
     ]
   },

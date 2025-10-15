@@ -19,7 +19,7 @@
       "cssVars": {}
     },
     {
-      "name": "404-1",
+      "name": "not-found-1",
       "type": "registry:block",
       "description": "Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.",
       "registryDependencies": [
@@ -28,16 +28,16 @@
       ],
       "files": [
         {
-          "path": "registry/blocks/404/1/not-found.tsx",
+          "path": "registry/blocks/not-found/1/not-found.tsx",
           "type": "registry:component"
         }
       ],
       "categories": [
-        "404"
+        "not-found"
       ]
     },
     {
-      "name": "404-2",
+      "name": "not-found-2",
       "type": "registry:block",
       "description": "Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.",
       "dependencies": [
@@ -49,12 +49,12 @@
       ],
       "files": [
         {
-          "path": "registry/blocks/404/2/not-found.tsx",
+          "path": "registry/blocks/not-found/2/not-found.tsx",
           "type": "registry:component"
         }
       ],
       "categories": [
-        "404"
+        "not-found"
       ]
     },
     {

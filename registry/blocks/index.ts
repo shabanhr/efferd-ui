@@ -2,21 +2,21 @@ import { type RegistryItem } from 'shadcn/schema';
 
 export const blocks: RegistryItem[] = [
 	{
-		name: '404-1',
+		name: 'not-found-1',
 		type: 'registry:block',
 		description:
 			'Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.',
 		registryDependencies: ['button', 'empty'],
 		files: [
 			{
-				path: 'blocks/404/1/not-found.tsx',
+				path: 'blocks/not-found/1/not-found.tsx',
 				type: 'registry:component',
 			},
 		],
-		categories: ['404'],
+		categories: ['not-found'],
 	},
 	{
-		name: '404-2',
+		name: 'not-found-2',
 		type: 'registry:block',
 		description:
 			'Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.',
@@ -24,11 +24,11 @@ export const blocks: RegistryItem[] = [
 		dependencies: ['motion'],
 		files: [
 			{
-				path: 'blocks/404/2/not-found.tsx',
+				path: 'blocks/not-found/2/not-found.tsx',
 				type: 'registry:component',
 			},
 		],
-		categories: ['404'],
+		categories: ['not-found'],
 	},
 	{
 		name: 'auth-1',
