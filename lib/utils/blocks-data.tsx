@@ -1,11 +1,12 @@
 import { cache } from 'react';
-import { Block } from '@/types';
+import { Block, Category } from '@/types';
 import { capitalize, unslugify } from '@/lib/utils';
 import { blocks } from '@/config/blocks';
 
 export const BLOCKS_DIR = 'registry/blocks';
+const newCategories = ['faqs', 'not-found'];
 
-export function getAllCategories() {
+export function getAllCategories(): Category[] {
 	const categoryMap = new Map<string, number>();
 
 	for (const block of blocks) {
@@ -14,12 +15,18 @@ export function getAllCategories() {
 		categoryMap.set(cat, (categoryMap.get(cat) ?? 0) + 1);
 	}
 
-	return Array.from(categoryMap.entries()).map(([id, count]) => ({
+	const sortedEntries = Array.from(categoryMap.entries())
+		.sort((a, b) => a[0].localeCompare(b[0]))
+		.sort((a, b) => Number(newCategories.includes(b[0])) - Number(newCategories.includes(a[0])));
+
+	return sortedEntries.map(([id, count]) => ({
 		id,
 		name: capitalize(unslugify(id)) as string,
+		isNew: newCategories.includes(id),
 		blocksCount: count,
 	}));
 }
+
 export const getCachedCategories = cache(getAllCategories);
 
 export function getBlocksByCategory(category: string): Block[] {

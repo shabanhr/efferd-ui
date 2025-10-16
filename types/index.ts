@@ -21,3 +21,10 @@ export type Block = {
 	description: string;
 	files: BlockFile[];
 };
+
+export type Category = {
+	id: string;
+	name: string;
+	blocksCount: number;
+	isNew: boolean;
+};
