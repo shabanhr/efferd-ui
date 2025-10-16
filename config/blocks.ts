@@ -5,42 +5,6 @@ import { Block } from '@/types';
 
 export const blocks: Block[] = [
   {
-    "name": "not-found-1",
-    "category": "not-found",
-    "description": "Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.",
-    "block_number": "1",
-    "files": [
-      {
-        "type": "page",
-        "name": "page.tsx",
-        "path": "registry/blocks/not-found/1/page.tsx"
-      },
-      {
-        "type": "component",
-        "name": "not-found.tsx",
-        "path": "registry/blocks/not-found/1/not-found.tsx"
-      }
-    ]
-  },
-  {
-    "name": "not-found-2",
-    "category": "not-found",
-    "description": "Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.",
-    "block_number": "2",
-    "files": [
-      {
-        "type": "page",
-        "name": "page.tsx",
-        "path": "registry/blocks/not-found/2/page.tsx"
-      },
-      {
-        "type": "component",
-        "name": "not-found.tsx",
-        "path": "registry/blocks/not-found/2/not-found.tsx"
-      }
-    ]
-  },
-  {
     "name": "auth-1",
     "category": "auth",
     "description": "Modern auth page with particle background and social login buttons.",
@@ -142,6 +106,96 @@ export const blocks: Block[] = [
         "type": "component",
         "name": "feature-card.tsx",
         "path": "registry/blocks/feature/1/feature-card.tsx"
+      }
+    ]
+  },
+  {
+    "name": "faqs-1",
+    "category": "faqs",
+    "description": "Elegant FAQ section with accordion-style questions, smooth transitions, and clear support call-to-action.",
+    "block_number": "1",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/faqs/1/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "faqs-section.tsx",
+        "path": "registry/blocks/faqs/1/faqs-section.tsx"
+      }
+    ]
+  },
+  {
+    "name": "faqs-2",
+    "category": "faqs",
+    "description": "Split-screen FAQ layout with bordered sections, interactive accordion, and a clean call-to-action footer.",
+    "block_number": "2",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/faqs/2/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "faqs-section.tsx",
+        "path": "registry/blocks/faqs/2/faqs-section.tsx"
+      }
+    ]
+  },
+  {
+    "name": "faqs-3",
+    "category": "faqs",
+    "description": "Two-column FAQ section featuring bordered layout, vertical guide line, and elegant accordion interactions.",
+    "block_number": "3",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/faqs/3/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "faqs-section.tsx",
+        "path": "registry/blocks/faqs/3/faqs-section.tsx"
+      }
+    ]
+  },
+  {
+    "name": "faqs-4",
+    "category": "faqs",
+    "description": "Multi-category FAQ section with sidebar filters, adaptive accordion layout, and elegant interactive transitions.",
+    "block_number": "4",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/faqs/4/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "faqs-section.tsx",
+        "path": "registry/blocks/faqs/4/faqs-section.tsx"
+      }
+    ]
+  },
+  {
+    "name": "faqs-5",
+    "category": "faqs",
+    "description": "Responsive FAQ section with filters, search, and accordions for quick answers.",
+    "block_number": "5",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/faqs/5/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "faqs-section.tsx",
+        "path": "registry/blocks/faqs/5/faqs-section.tsx"
       }
     ]
   },
@@ -369,6 +423,42 @@ export const blocks: Block[] = [
         "type": "component",
         "name": "lazy-image.tsx",
         "path": "registry/blocks/image-gallery/1/lazy-image.tsx"
+      }
+    ]
+  },
+  {
+    "name": "not-found-1",
+    "category": "not-found",
+    "description": "Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.",
+    "block_number": "1",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/not-found/1/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "not-found.tsx",
+        "path": "registry/blocks/not-found/1/not-found.tsx"
+      }
+    ]
+  },
+  {
+    "name": "not-found-2",
+    "category": "not-found",
+    "description": "Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.",
+    "block_number": "2",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/not-found/2/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "not-found.tsx",
+        "path": "registry/blocks/not-found/2/not-found.tsx"
       }
     ]
   },

@@ -2,35 +2,6 @@ import { type RegistryItem } from 'shadcn/schema';
 
 export const blocks: RegistryItem[] = [
 	{
-		name: 'not-found-1',
-		type: 'registry:block',
-		description:
-			'Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.',
-		registryDependencies: ['button', 'empty'],
-		files: [
-			{
-				path: 'blocks/not-found/1/not-found.tsx',
-				type: 'registry:component',
-			},
-		],
-		categories: ['not-found'],
-	},
-	{
-		name: 'not-found-2',
-		type: 'registry:block',
-		description:
-			'Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.',
-		registryDependencies: ['button', 'empty'],
-		dependencies: ['motion'],
-		files: [
-			{
-				path: 'blocks/not-found/2/not-found.tsx',
-				type: 'registry:component',
-			},
-		],
-		categories: ['not-found'],
-	},
-	{
 		name: 'auth-1',
 		type: 'registry:block',
 		description: 'Modern auth page with particle background and social login buttons.',
@@ -106,6 +77,71 @@ export const blocks: RegistryItem[] = [
 			},
 		],
 		categories: ['feature'],
+	},
+	{
+		name: 'faqs-1',
+		type: 'registry:block',
+		description: 'Elegant FAQ section with accordion-style questions, smooth transitions, and clear support call-to-action.',
+		registryDependencies: ['accordion'],
+		files: [
+			{
+				path: 'blocks/faqs/1/faqs-section.tsx',
+				type: 'registry:component',
+			},
+		],
+		categories: ['faqs'],
+	},
+	{
+		name: 'faqs-2',
+		type: 'registry:block',
+		description: 'Split-screen FAQ layout with bordered sections, interactive accordion, and a clean call-to-action footer.',
+		registryDependencies: ['accordion'],
+		files: [
+			{
+				path: 'blocks/faqs/2/faqs-section.tsx',
+				type: 'registry:component',
+			},
+		],
+		categories: ['faqs'],
+	},
+	{
+		name: 'faqs-3',
+		type: 'registry:block',
+		description: 'Two-column FAQ section featuring bordered layout, vertical guide line, and elegant accordion interactions.',
+		registryDependencies: ['accordion'],
+		files: [
+			{
+				path: 'blocks/faqs/3/faqs-section.tsx',
+				type: 'registry:component',
+			},
+		],
+		categories: ['faqs'],
+	},
+	{
+		name: 'faqs-4',
+		type: 'registry:block',
+		description: 'Multi-category FAQ section with sidebar filters, adaptive accordion layout, and elegant interactive transitions.',
+		registryDependencies: ['accordion', 'button'],
+		files: [
+			{
+				path: 'blocks/faqs/4/faqs-section.tsx',
+				type: 'registry:component',
+			},
+		],
+		categories: ['faqs'],
+	},
+	{
+		name: 'faqs-5',
+		type: 'registry:block',
+		description: 'Responsive FAQ section with filters, search, and accordions for quick answers.',
+		registryDependencies: ['accordion', 'button', 'input-group', 'empty'],
+		files: [
+			{
+				path: 'blocks/faqs/5/faqs-section.tsx',
+				type: 'registry:component',
+			},
+		],
+		categories: ['faqs'],
 	},
 	{
 		name: 'footer-1',
@@ -280,6 +316,35 @@ export const blocks: RegistryItem[] = [
 			},
 		],
 		categories: ['image-gallery'],
+	},
+		{
+		name: 'not-found-1',
+		type: 'registry:block',
+		description:
+			'Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.',
+		registryDependencies: ['button', 'empty'],
+		files: [
+			{
+				path: 'blocks/not-found/1/not-found.tsx',
+				type: 'registry:component',
+			},
+		],
+		categories: ['not-found'],
+	},
+	{
+		name: 'not-found-2',
+		type: 'registry:block',
+		description:
+			'Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.',
+		registryDependencies: ['button', 'empty'],
+		dependencies: ['motion'],
+		files: [
+			{
+				path: 'blocks/not-found/2/not-found.tsx',
+				type: 'registry:component',
+			},
+		],
+		categories: ['not-found'],
 	},
 	{
 		name: 'pricing-1',
