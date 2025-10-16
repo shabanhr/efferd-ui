@@ -24,7 +24,7 @@ export function constructMetadata({
 	title,
 	fullTitle,
 	description = SITE_DESCRIPTION,
-	image = `${SITE_HOME_URL}/og.png`,
+	image = `${SITE_HOME_URL}/og.jpeg`,
 	video,
 	url,
 	canonicalUrl,
