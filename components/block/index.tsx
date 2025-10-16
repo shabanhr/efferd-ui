@@ -54,7 +54,7 @@ export function BlockBox({ block }: BlockPreviewProps) {
 					<RefreshButton handleRefresh={onRefreshIframe} isRefreshing={isRefreshing} />
 				</div>
 				<div className="flex items-center gap-3">
-					<CopyCliButton name={name} registryUrl={registryUrl} />
+					<CopyCliButton name={name} />
 					<div className="h-5 border-r border-dashed" />
 					<OpenInV0Button name={name} registryUrl={registryUrl} />
 					<OpenInNewTabButton previewLink={previewLink} />

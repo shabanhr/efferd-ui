@@ -6,15 +6,14 @@ import { ShadcnIcon } from '../icons';
 import { sendGAEvent } from '@next/third-parties/google';
 
 interface CopyCliButtonProps {
-	registryUrl: string;
 	name: string;
 }
 
-export function CopyCliButton({ registryUrl, name }: CopyCliButtonProps) {
+export function CopyCliButton({ name }: CopyCliButtonProps) {
 	const { copied, copy } = useCopyToClipboard();
 
 	const handleCopy = () => {
-		copy(`pnpm dlx shadcn@latest add ${registryUrl}`);
+		copy(`pnpm dlx shadcn@latest add @efferd-ui/${name}`);
 		sendGAEvent('event', 'copy_cli', {
 			block_name: name,
 		});
@@ -42,7 +41,7 @@ export function CopyCliButton({ registryUrl, name }: CopyCliButtonProps) {
 				<ShadcnIcon className="size-3.5" aria-hidden="true" />
 			</div>
 			<span className="text-muted-foreground hidden font-mono text-sm md:block">
-				@efferd/{name}
+				@efferd-ui/{name}
 			</span>
 		</button>
 	);
