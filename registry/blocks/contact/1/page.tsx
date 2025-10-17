@@ -1,9 +1,9 @@
-import { Contact } from './contact';
+import { Contact } from "./contact";
 
 export default function Page() {
-	return (
-		<div className="min-h-screen w-full">
-			<Contact />
-		</div>
-	);
+  return (
+    <div className="min-h-screen w-full">
+      <Contact />
+    </div>
+  );
 }

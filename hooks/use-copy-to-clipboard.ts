@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type UseCopyToClipboardReturn = {
   copied: boolean;
@@ -9,21 +9,21 @@ type UseCopyToClipboardReturn = {
 
 // Fallback to old browsers
 function fallbackCopy(str: string): boolean {
-  const textarea = document.createElement('textarea');
+  const textarea = document.createElement("textarea");
   let success = false;
 
   textarea.value = str;
-  textarea.setAttribute('readonly', '');
+  textarea.setAttribute("readonly", "");
 
-  textarea.style.position = 'absolute';
-  textarea.style.left = '-9999px';
+  textarea.style.position = "absolute";
+  textarea.style.left = "-9999px";
 
   document.body.appendChild(textarea);
 
   textarea.select();
 
   try {
-    success = document.execCommand('copy');
+    success = document.execCommand("copy");
   } catch {
     success = false;
   } finally {
@@ -33,9 +33,7 @@ function fallbackCopy(str: string): boolean {
   return success;
 }
 
-export function useCopyToClipboard(
-  duration: number = 1500,
-): UseCopyToClipboardReturn {
+export function useCopyToClipboard(duration = 1500): UseCopyToClipboardReturn {
   const [copied, setCopied] = useState<boolean>(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -44,7 +42,7 @@ export function useCopyToClipboard(
       try {
         let success = false;
 
-        if (navigator.clipboard && navigator.clipboard.writeText) {
+        if (navigator.clipboard?.writeText) {
           await navigator.clipboard.writeText(text);
           success = true;
         } else {
@@ -53,27 +51,28 @@ export function useCopyToClipboard(
 
         if (success) {
           setCopied(true);
-          if (timeoutRef.current) clearTimeout(timeoutRef.current);
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
           timeoutRef.current = setTimeout(() => setCopied(false), duration);
           return true;
-        } else {
-          throw new Error('Copy command failed');
         }
-      } catch (err: unknown) {
-        console.error('Failed to copy text: ', err);
+        throw new Error("Copy command failed");
+      } catch (_err: unknown) {
         return false;
       }
     },
-    [duration],
+    [duration]
   );
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
-    };
-  }, []);
+    },
+    []
+  );
 
   return {
     copied,

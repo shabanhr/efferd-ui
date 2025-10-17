@@ -1,4 +1,4 @@
-import { clsx, type ClassValue } from "clsx";
+import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -7,7 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 
 // capitalize first character of each word in a string
 export function capitalize(str?: string | null) {
-  if (!str || typeof str !== "string") return str;
+  if (!str || typeof str !== "string") {
+    return str;
+  }
   return str
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -30,6 +32,8 @@ export const truncate = (
   str: string | null | undefined,
   length: number
 ): string | null => {
-  if (!str || str.length <= length) return str ?? null;
+  if (!str || str.length <= length) {
+    return str ?? null;
+  }
   return `${str.slice(0, length - 3)}...`;
 };

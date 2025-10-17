@@ -1,9 +1,9 @@
-import { FaqsSection } from './faqs-section';
+import { FaqsSection } from "./faqs-section";
 
 export default function Page() {
-	return (
-		<div className="w-full min-h-screen">
-			<FaqsSection />
-		</div>
-	);
+  return (
+    <div className="min-h-screen w-full">
+      <FaqsSection />
+    </div>
+  );
 }

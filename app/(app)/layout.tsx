@@ -1,6 +1,6 @@
+import { SiteFooter } from "@/components/footer";
 import { SiteHeader } from "@/components/header";
 import { cn } from "@/lib/utils";
-import { SiteFooter } from "@/components/footer";
 
 export default function AppLayout({ children }: LayoutProps<"/">) {
   return (
@@ -9,8 +9,8 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
       <main
         className={cn(
           "container relative grow",
-          "before:absolute before:z-1 before:-inset-y-20 before:left-0 before:border-border xl:before:border-l before:border-dashed",
-          "after:absolute after:z-1 after:-inset-y-20 after:right-0 after:border-border xl:after:border-r after:border-dashed"
+          "before:-inset-y-20 before:absolute before:left-0 before:z-1 before:border-border before:border-dashed xl:before:border-l",
+          "after:-inset-y-20 after:absolute after:right-0 after:z-1 after:border-border after:border-dashed xl:after:border-r"
         )}
       >
         {children}

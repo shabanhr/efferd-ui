@@ -1,12 +1,11 @@
-import React from 'react';
-import { Header } from './header';
-import { DemoLayout } from '@/components/demo-layout';
+import { DemoLayout } from "@/components/demo-layout";
+import { Header } from "./header";
 
 export default function page() {
-	return (
-		<>
-			<Header />
-			<DemoLayout />
-		</>
-	);
+  return (
+    <>
+      <Header />
+      <DemoLayout />
+    </>
+  );
 }

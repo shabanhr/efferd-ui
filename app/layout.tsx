@@ -1,32 +1,32 @@
-import './globals.css';
+import "./globals.css";
 
-import { RootProviders } from '@/components/providers';
-import { fontHeading, fontSans, fontMono } from '@/lib/fonts';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { RootProviders } from "@/components/providers";
+import { fontHeading, fontMono, fontSans } from "@/lib/fonts";
 
-import { constructMetadata } from '@/lib/metadata';
+import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({
-	canonicalUrl: '/',
+  canonicalUrl: "/",
 });
 
-export default function RootLayout({ children }: LayoutProps<'/'>) {
-	return (
-		<html lang="en" suppressHydrationWarning>
-			<body
-				className={`${fontSans.variable} ${fontHeading.variable} ${fontMono.variable} bg-background text-foreground overscroll-none font-sans antialiased`}
-			>
-				<RootProviders
-					themeProps={{
-						attribute: 'class',
-						defaultTheme: 'dark',
-						disableTransitionOnChange: true,
-					}}
-				>
-					{children}
-				</RootProviders>
-			</body>
-			<GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS as string} />
-		</html>
-	);
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${fontSans.variable} ${fontHeading.variable} ${fontMono.variable} overscroll-none bg-background font-sans text-foreground antialiased`}
+      >
+        <RootProviders
+          themeProps={{
+            attribute: "class",
+            defaultTheme: "dark",
+            disableTransitionOnChange: true,
+          }}
+        >
+          {children}
+        </RootProviders>
+      </body>
+      <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS as string} />
+    </html>
+  );
 }

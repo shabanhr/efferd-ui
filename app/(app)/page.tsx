@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { BorderSeparator } from "@/components/sheard";
 import { getCachedCategories } from "@/lib/utils/blocks-data";
-import { Category } from "@/types";
-import Link from "next/link";
+import type { Category } from "@/types";
 
 export default function Page() {
   const categories = getCachedCategories();
@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <div className="min-h-screen">
       <div className="cpx space-y-2 py-5">
-        <h1 className="font-heading text-4xl font-bold">
+        <h1 className="font-bold font-heading text-4xl">
           Beautiful Shadcn Blocks
         </h1>
         <p className="text-muted-foreground text-sm">
@@ -22,7 +22,7 @@ export default function Page() {
           <CategoryCard key={category.id} {...category} />
         ))}
         <div className="flex aspect-video flex-col items-center justify-center rounded-md border border-dashed p-2">
-          <p className="font-heading text-muted-foreground text-sm font-semibold md:text-lg">
+          <p className="font-heading font-semibold text-muted-foreground text-sm md:text-lg">
             Coming Soon
           </p>
         </div>
@@ -34,12 +34,16 @@ export default function Page() {
 function CategoryCard({ id, name, blocksCount, isNew }: Category) {
   return (
     <Link
+      className="relative flex aspect-video flex-col items-center justify-center rounded-md border border-dashed bg-card p-2 shadow hover:bg-accent dark:bg-card/50 dark:hover:bg-accent/50"
       href={`/${id}`}
-      className="relative bg-card dark:bg-card/50 hover:bg-accent dark:hover:bg-accent/50 flex aspect-video flex-col items-center justify-center rounded-md border border-dashed p-2 shadow"
     >
-      {isNew && <span className="absolute top-1 left-1 tracking-wider font-mono text-xs font-semibold px-1 py-0.5 border border-dashed rounded-tl-md bg-card">NEW</span>}
+      {isNew && (
+        <span className="absolute top-1 left-1 rounded-tl-md border border-dashed bg-card px-1 py-0.5 font-mono font-semibold text-xs tracking-wider">
+          NEW
+        </span>
+      )}
 
-      <p className="font-heading text-sm font-semibold md:text-lg">{name}</p>
+      <p className="font-heading font-semibold text-sm md:text-lg">{name}</p>
       <p className="text-muted-foreground text-xs">
         {blocksCount} block{blocksCount === 1 ? "" : "s"}
       </p>

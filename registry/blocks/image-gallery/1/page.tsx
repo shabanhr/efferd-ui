@@ -1,5 +1,5 @@
-import { ImageGallery } from './image-gallery';
+import { ImageGallery } from "./image-gallery";
 
 export default function Page() {
-	return <ImageGallery />;
+  return <ImageGallery />;
 }
