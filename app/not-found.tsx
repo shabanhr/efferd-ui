@@ -31,13 +31,11 @@ export default function NotFound() {
               </EmptyDescription>
             </EmptyHeader>
             <EmptyContent>
-              <div className="flex gap-2">
-                <Button asChild variant="outline">
-                  <Link href="/">
-                    <Home /> Go Home
-                  </Link>
-                </Button>
-              </div>
+              <Button asChild variant="outline">
+                <Link href="/">
+                  <Home /> Go Home
+                </Link>
+              </Button>
             </EmptyContent>
           </Empty>
           <BorderSeparator />
