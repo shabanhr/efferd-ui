@@ -4,7 +4,7 @@ import { capitalize, unslugify } from "@/lib/utils";
 import type { Block, Category } from "@/types";
 
 export const BLOCKS_DIR = "registry/blocks";
-const newCategories = ["faqs", "not-found"];
+const newCategories = ["faqs", "cta"];
 
 export function getAllCategories(): Category[] {
   const categoryMap = new Map<string, number>();
