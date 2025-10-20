@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-2",
+  "type": "registry:block",
+  "description": "Minimal call-to-action section with headline, short description, and dual buttons for sales contact and getting started.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/2/cta.tsx",
+      "content": "import { ArrowRightIcon } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\n\nexport function CallToAction() {\n  return (\n    <div className=\"relative mx-auto flex w-full max-w-3xl flex-col justify-between border-x\">\n      <div className=\"-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t\" />\n      <div className=\"border-b px-2 py-8\">\n        <h2 className=\"text-center font-bold text-2xl\">\n          Let your plans shape the future.\n        </h2>\n        <p className=\"text-center text-muted-foreground\">\n          Start your free trial today. No credit card required.\n        </p>\n      </div>\n      <div className=\"flex items-center justify-center gap-2 bg-secondary/80 p-4 dark:bg-secondary/40\">\n        <Button variant=\"outline\">Contact Sales</Button>\n        <Button>\n          Get Started <ArrowRightIcon />\n        </Button>\n      </div>\n      <div className=\"-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "cta"
+  ]
+}

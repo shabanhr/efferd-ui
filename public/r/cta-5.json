@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-5",
+  "type": "registry:block",
+  "description": "Newsletter subscription section with email input, submit button, and expert avatars for added trust and engagement.",
+  "registryDependencies": [
+    "button",
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/5/cta.tsx",
+      "content": "import { ArrowRightIcon, AtSignIcon } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/ui/input-group\";\n\nexport function CallToAction() {\n  return (\n    <div className=\"relative mx-auto flex w-full max-w-3xl flex-col justify-between gap-y-6 border-x bg-secondary/80 px-2 py-8 md:px-4 dark:bg-secondary/40\">\n      <div className=\"-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t\" />\n\n      <div className=\"space-y-1\">\n        <h2 className=\"text-center font-bold text-2xl tracking-tight md:font-extrabold md:text-4xl\">\n          Subscripe to our newsletter\n        </h2>\n        <p className=\"text-center text-muted-foreground text-sm md:text-base\">\n          Get the latest updates and insights delivered right to your inbox.\n        </p>\n      </div>\n      <div className=\"flex items-center justify-center gap-2\">\n        <InputGroup className=\"max-w-[280px] bg-card\">\n          <InputGroupInput placeholder=\"Enter your email\" />\n          <InputGroupAddon>\n            <AtSignIcon />\n          </InputGroupAddon>\n        </InputGroup>\n\n        <Button>\n          Subscripe <ArrowRightIcon />\n        </Button>\n      </div>\n      <div className=\"flex items-center justify-center gap-2\">\n        <p className=\"text-muted-foreground text-sm\">\n          Our experts are ready to help\n        </p>\n        <div className=\"-space-x-[0.45rem] flex\">\n          <img\n            alt=\"Avatar 01\"\n            className=\"rounded-full ring-1 ring-background\"\n            height={24}\n            src=\"https://mynaui.com/avatars/avatar-01.jpg\"\n            width={24}\n          />\n          <img\n            alt=\"Avatar 02\"\n            className=\"rounded-full ring-1 ring-background\"\n            height={24}\n            src=\"https://mynaui.com/avatars/avatar-02.jpg\"\n            width={24}\n          />\n          <img\n            alt=\"Avatar 03\"\n            className=\"rounded-full ring-1 ring-background\"\n            height={24}\n            src=\"https://mynaui.com/avatars/avatar-03.jpg\"\n            width={24}\n          />\n          <img\n            alt=\"Avatar 04\"\n            className=\"rounded-full ring-1 ring-background\"\n            height={24}\n            src=\"https://mynaui.com/avatars/avatar-04.jpg\"\n            width={24}\n          />\n        </div>\n      </div>\n\n      <div className=\"-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "cta"
+  ]
+}

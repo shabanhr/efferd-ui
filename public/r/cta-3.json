@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-3",
+  "type": "registry:block",
+  "description": "Stylish call-to-action block featuring bordered layout, decorative icons, and clear buttons for contacting sales or getting started.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/3/cta.tsx",
+      "content": "import { ArrowRightIcon, PlusIcon } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\n\nexport function CallToAction() {\n  return (\n    <div className=\"relative mx-auto flex w-full max-w-3xl flex-col justify-between gap-y-6 border-y bg-[radial-gradient(35%_80%_at_25%_0%,--theme(--color-foreground/.08),transparent)] px-4 py-8\">\n      <PlusIcon\n        className=\"absolute top-[-12.5px] left-[-11.5px] z-1 size-6\"\n        strokeWidth={1}\n      />\n      <PlusIcon\n        className=\"absolute top-[-12.5px] right-[-11.5px] z-1 size-6\"\n        strokeWidth={1}\n      />\n      <PlusIcon\n        className=\"absolute bottom-[-12.5px] left-[-11.5px] z-1 size-6\"\n        strokeWidth={1}\n      />\n      <PlusIcon\n        className=\"absolute right-[-11.5px] bottom-[-12.5px] z-1 size-6\"\n        strokeWidth={1}\n      />\n\n      <div className=\"-inset-y-6 pointer-events-none absolute left-0 w-px border-l\" />\n      <div className=\"-inset-y-6 pointer-events-none absolute right-0 w-px border-r\" />\n\n      <div className=\"-z-10 absolute top-0 left-1/2 h-full border-l border-dashed\" />\n\n      <div className=\"space-y-1\">\n        <h2 className=\"text-center font-bold text-2xl\">\n          Let your plans shape the future.\n        </h2>\n        <p className=\"text-center text-muted-foreground\">\n          Start your free trial today. No credit card required.\n        </p>\n      </div>\n\n      <div className=\"flex items-center justify-center gap-2\">\n        <Button variant=\"outline\">Contact Sales</Button>\n        <Button>\n          Get Started <ArrowRightIcon />\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "cta"
+  ]
+}

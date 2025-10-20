@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-1",
+  "type": "registry:block",
+  "description": "Centered call-to-action bar with bold heading and dual action buttons.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/cta/1/cta.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\n\nexport function CallToAction() {\n  return (\n    <div className=\"relative mx-auto flex w-full max-w-3xl flex-col justify-between border-x md:flex-row\">\n      <div className=\"-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t\" />\n      <div className=\"border-b p-4 md:border-b-0\">\n        <h2 className=\"text-center font-bold text-2xl md:text-left\">\n          Let your plans shape the future.\n        </h2>\n      </div>\n      <div className=\"flex items-center justify-center gap-2 p-4 md:border-l\">\n        <Button variant=\"secondary\">Contact Sales</Button>\n        <Button>Get Started</Button>\n      </div>\n      <div className=\"-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "cta"
+  ]
+}

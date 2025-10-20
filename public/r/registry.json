@@ -98,6 +98,92 @@
       ]
     },
     {
+      "name": "cta-1",
+      "type": "registry:block",
+      "description": "Centered call-to-action bar with bold heading and dual action buttons.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/1/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
+    },
+    {
+      "name": "cta-2",
+      "type": "registry:block",
+      "description": "Minimal call-to-action section with headline, short description, and dual buttons for sales contact and getting started.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/2/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
+    },
+    {
+      "name": "cta-3",
+      "type": "registry:block",
+      "description": "Stylish call-to-action block featuring bordered layout, decorative icons, and clear buttons for contacting sales or getting started.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/3/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
+    },
+    {
+      "name": "cta-4",
+      "type": "registry:block",
+      "description": "Modern call-to-action card with rounded edges, subtle shadow, and dual buttons for contacting sales or getting started.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/4/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
+    },
+    {
+      "name": "cta-5",
+      "type": "registry:block",
+      "description": "Newsletter subscription section with email input, submit button, and expert avatars for added trust and engagement.",
+      "registryDependencies": [
+        "button",
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/5/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
+    },
+    {
       "name": "feature-1",
       "type": "registry:block",
       "description": "Minimal feature card with icon, title, and subtle grid background.",

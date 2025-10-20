@@ -1,8 +1,6 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": [
-    "ultracite"
-  ],
+  "extends": ["ultracite"],
   "linter": {
     "rules": {
       "a11y": {
@@ -25,7 +23,9 @@
     "includes": [
       "**/*",
       "!components/ui",
-      "!public"
+      "!public",
+      "!config/blocks.ts",
+      "!registry.json"
     ]
   }
 }

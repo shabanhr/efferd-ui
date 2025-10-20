@@ -5,9 +5,16 @@
     {
       "name": "index",
       "type": "registry:style",
-      "dependencies": ["class-variance-authority", "lucide-react"],
-      "devDependencies": ["tw-animate-css"],
-      "registryDependencies": ["utils"],
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "devDependencies": [
+        "tw-animate-css"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [],
       "cssVars": {}
     },
@@ -15,7 +22,10 @@
       "name": "auth-1",
       "type": "registry:block",
       "description": "Modern auth page with particle background and social login buttons.",
-      "registryDependencies": ["button", "@magicui/particles"],
+      "registryDependencies": [
+        "button",
+        "@magicui/particles"
+      ],
       "files": [
         {
           "path": "registry/blocks/auth/1/auth-page.tsx",
@@ -26,14 +36,21 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["auth"]
+      "categories": [
+        "auth"
+      ]
     },
     {
       "name": "auth-2",
       "type": "registry:block",
       "description": "Modern auth page with testimonial sidebar, social logins, and email signup.",
-      "dependencies": ["motion"],
-      "registryDependencies": ["button", "input-group"],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-group"
+      ],
       "files": [
         {
           "path": "registry/blocks/auth/2/auth-page.tsx",
@@ -48,7 +65,9 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["auth"]
+      "categories": [
+        "auth"
+      ]
     },
     {
       "name": "contact-1",
@@ -60,7 +79,9 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["contact"]
+      "categories": [
+        "contact"
+      ]
     },
     {
       "name": "contact-2",
@@ -72,92 +93,212 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["contact"]
+      "categories": [
+        "contact"
+      ]
+    },
+    {
+      "name": "cta-1",
+      "type": "registry:block",
+      "description": "Centered call-to-action bar with bold heading and dual action buttons.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/1/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
+    },
+    {
+      "name": "cta-2",
+      "type": "registry:block",
+      "description": "Minimal call-to-action section with headline, short description, and dual buttons for sales contact and getting started.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/2/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
+    },
+    {
+      "name": "cta-3",
+      "type": "registry:block",
+      "description": "Stylish call-to-action block featuring bordered layout, decorative icons, and clear buttons for contacting sales or getting started.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/3/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
+    },
+    {
+      "name": "cta-4",
+      "type": "registry:block",
+      "description": "Modern call-to-action card with rounded edges, subtle shadow, and dual buttons for contacting sales or getting started.",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/4/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
+    },
+    {
+      "name": "cta-5",
+      "type": "registry:block",
+      "description": "Newsletter subscription section with email input, submit button, and expert avatars for added trust and engagement.",
+      "registryDependencies": [
+        "button",
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/cta/5/cta.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "cta"
+      ]
     },
     {
       "name": "feature-1",
       "type": "registry:block",
       "description": "Minimal feature card with icon, title, and subtle grid background.",
-      "dependencies": ["motion"],
-      "registryDependencies": ["@magicui/grid-pattern"],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "@magicui/grid-pattern"
+      ],
       "files": [
         {
           "path": "registry/blocks/feature/1/feature-card.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["feature"]
+      "categories": [
+        "feature"
+      ]
     },
     {
       "name": "faqs-1",
       "type": "registry:block",
       "description": "Elegant FAQ section with accordion-style questions, smooth transitions, and clear support call-to-action.",
-      "registryDependencies": ["accordion"],
+      "registryDependencies": [
+        "accordion"
+      ],
       "files": [
         {
           "path": "registry/blocks/faqs/1/faqs-section.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["faqs"]
+      "categories": [
+        "faqs"
+      ]
     },
     {
       "name": "faqs-2",
       "type": "registry:block",
       "description": "Split-screen FAQ layout with bordered sections, interactive accordion, and a clean call-to-action footer.",
-      "registryDependencies": ["accordion"],
+      "registryDependencies": [
+        "accordion"
+      ],
       "files": [
         {
           "path": "registry/blocks/faqs/2/faqs-section.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["faqs"]
+      "categories": [
+        "faqs"
+      ]
     },
     {
       "name": "faqs-3",
       "type": "registry:block",
       "description": "Two-column FAQ section featuring bordered layout, vertical guide line, and elegant accordion interactions.",
-      "registryDependencies": ["accordion"],
+      "registryDependencies": [
+        "accordion"
+      ],
       "files": [
         {
           "path": "registry/blocks/faqs/3/faqs-section.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["faqs"]
+      "categories": [
+        "faqs"
+      ]
     },
     {
       "name": "faqs-4",
       "type": "registry:block",
       "description": "Multi-category FAQ section with sidebar filters, adaptive accordion layout, and elegant interactive transitions.",
-      "registryDependencies": ["accordion", "button"],
+      "registryDependencies": [
+        "accordion",
+        "button"
+      ],
       "files": [
         {
           "path": "registry/blocks/faqs/4/faqs-section.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["faqs"]
+      "categories": [
+        "faqs"
+      ]
     },
     {
       "name": "faqs-5",
       "type": "registry:block",
       "description": "Responsive FAQ section with filters, search, and accordions for quick answers.",
-      "registryDependencies": ["accordion", "button", "input-group", "empty"],
+      "registryDependencies": [
+        "accordion",
+        "button",
+        "input-group",
+        "empty"
+      ],
       "files": [
         {
           "path": "registry/blocks/faqs/5/faqs-section.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["faqs"]
+      "categories": [
+        "faqs"
+      ]
     },
     {
       "name": "footer-1",
       "type": "registry:block",
       "description": "Clean footer with company links, resources, and social icons.",
-      "registryDependencies": ["button"],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/blocks/footer/1/footer.tsx",
@@ -168,13 +309,17 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["footer"]
+      "categories": [
+        "footer"
+      ]
     },
     {
       "name": "footer-2",
       "type": "registry:block",
       "description": "Animated footer with link sections, brand logo, and social icons.",
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "files": [
         {
           "path": "registry/blocks/footer/2/footer.tsx",
@@ -185,7 +330,9 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["footer"]
+      "categories": [
+        "footer"
+      ]
     },
     {
       "name": "footer-3",
@@ -197,27 +344,37 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["footer"]
+      "categories": [
+        "footer"
+      ]
     },
     {
       "name": "footer-4",
       "type": "registry:block",
       "description": "Multi-column footer with app store buttons, social icons, and link groups.",
-      "registryDependencies": ["button"],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/blocks/footer/4/footer.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["footer"]
+      "categories": [
+        "footer"
+      ]
     },
     {
       "name": "footer-5",
       "type": "registry:block",
       "description": "Sticky layered footer with gradient background, social icons, and animated link groups.",
-      "dependencies": ["motion"],
-      "registryDependencies": ["button"],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/blocks/footer/5/sticky-footer.tsx",
@@ -228,13 +385,17 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["footer"]
+      "categories": [
+        "footer"
+      ]
     },
     {
       "name": "header-1",
       "type": "registry:block",
       "description": "Responsive sticky header with scroll blur effect, animated mobile menu, and adaptive navigation links.",
-      "registryDependencies": ["button"],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/blocks/header/1/header.tsx",
@@ -253,13 +414,17 @@
           "type": "registry:hook"
         }
       ],
-      "categories": ["header"]
+      "categories": [
+        "header"
+      ]
     },
     {
       "name": "header-2",
       "type": "registry:block",
       "description": "Elegant responsive header with scroll-based styling, mobile drawer menu, and smooth transitions.",
-      "registryDependencies": ["button"],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/blocks/header/2/header.tsx",
@@ -278,13 +443,18 @@
           "type": "registry:hook"
         }
       ],
-      "categories": ["header"]
+      "categories": [
+        "header"
+      ]
     },
     {
       "name": "header-3",
       "type": "registry:block",
       "description": "Feature-rich responsive header with scroll blur, animated mobile drawer, and nested navigation menus.",
-      "registryDependencies": ["button", "navigation-menu"],
+      "registryDependencies": [
+        "button",
+        "navigation-menu"
+      ],
       "files": [
         {
           "path": "registry/blocks/header/3/header.tsx",
@@ -303,14 +473,20 @@
           "type": "registry:hook"
         }
       ],
-      "categories": ["header"]
+      "categories": [
+        "header"
+      ]
     },
     {
       "name": "image-gallery-1",
       "type": "registry:block",
       "description": "Masonry-style responsive gallery using random images with dynamic aspect ratios.",
-      "dependencies": ["motion"],
-      "registryDependencies": ["aspect-ratio"],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "aspect-ratio"
+      ],
       "files": [
         {
           "path": "registry/blocks/image-gallery/1/image-gallery.tsx",
@@ -321,41 +497,60 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["image-gallery"]
+      "categories": [
+        "image-gallery"
+      ]
     },
     {
       "name": "not-found-1",
       "type": "registry:block",
       "description": "Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.",
-      "registryDependencies": ["button", "empty"],
+      "registryDependencies": [
+        "button",
+        "empty"
+      ],
       "files": [
         {
           "path": "registry/blocks/not-found/1/not-found.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["not-found"]
+      "categories": [
+        "not-found"
+      ]
     },
     {
       "name": "not-found-2",
       "type": "registry:block",
       "description": "Animated 404 page with floating gradient orbs, soft motion effects, and clean centered layout.",
-      "dependencies": ["motion"],
-      "registryDependencies": ["button", "empty"],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "empty"
+      ],
       "files": [
         {
           "path": "registry/blocks/not-found/2/not-found.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["not-found"]
+      "categories": [
+        "not-found"
+      ]
     },
     {
       "name": "pricing-1",
       "type": "registry:block",
       "description": "Responsive pricing section with frequency toggle, tooltips, and highlightable plans.",
-      "dependencies": ["motion"],
-      "registryDependencies": ["button", "tooltip"],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "tooltip"
+      ],
       "files": [
         {
           "path": "registry/blocks/pricing/1/pricing-section.tsx",
@@ -366,7 +561,9 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["pricing"]
+      "categories": [
+        "pricing"
+      ]
     },
     {
       "name": "pricing-2",
@@ -378,13 +575,17 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["pricing"]
+      "categories": [
+        "pricing"
+      ]
     },
     {
       "name": "pricing-3",
       "type": "registry:block",
       "description": "Three-tier pricing grid with interactive plan cards, badges, and feature lists.",
-      "registryDependencies": ["button"],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/blocks/pricing/3/pricing-section.tsx",
@@ -395,48 +596,67 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["pricing"]
+      "categories": [
+        "pricing"
+      ]
     },
     {
       "name": "pricing-4",
       "type": "registry:block",
       "description": "Animated dual pricing cards with motion effects, discount badges, and trust indicator.",
-      "dependencies": ["motion"],
-      "registryDependencies": ["button", "badge"],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
       "files": [
         {
           "path": "registry/blocks/pricing/4/pricing-section.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["pricing"]
+      "categories": [
+        "pricing"
+      ]
     },
     {
       "name": "testimonials-1",
       "type": "registry:block",
       "description": "Infinite vertical testimonial scroller with smooth motion and repeated card animation.",
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "files": [
         {
           "path": "registry/blocks/testimonials/1/testimonials-columns.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["testimonials"]
+      "categories": [
+        "testimonials"
+      ]
     },
     {
       "name": "testimonials-2",
       "type": "registry:block",
       "description": "Responsive testimonial grid with smooth motion reveal, subtle gradients, and elegant card design.",
-      "dependencies": ["motion"],
-      "registryDependencies": ["@magicui/grid-pattern"],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "@magicui/grid-pattern"
+      ],
       "files": [
         {
           "path": "registry/blocks/testimonials/2/testimonials-section.tsx",
           "type": "registry:component"
         }
       ],
-      "categories": ["testimonials"]
+      "categories": [
+        "testimonials"
+      ]
     }
   ]
 }
