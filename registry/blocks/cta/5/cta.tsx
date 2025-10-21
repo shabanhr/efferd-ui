@@ -28,7 +28,7 @@ export function CallToAction() {
         </InputGroup>
 
         <Button>
-          Subscripe <ArrowRightIcon />
+          Subscribe <ArrowRightIcon />
         </Button>
       </div>
       <div className="flex items-center justify-center gap-2">
