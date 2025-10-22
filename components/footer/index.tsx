@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE_NAME, SITE_X_HANDLE } from "@/config/site";
+import { MY_HANDLE, SITE_NAME } from "@/config/site";
 
 export function SiteFooter() {
   return (
@@ -10,7 +10,7 @@ export function SiteFooter() {
           <Link
             aria-label="x/twitter"
             className="font-medium text-foreground/90 hover:text-foreground hover:underline"
-            href={`https://x.com/${SITE_X_HANDLE}`}
+            href={`https://x.com/${MY_HANDLE}`}
             rel="noreferrer"
             target="_blank"
           >

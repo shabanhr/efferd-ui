@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import {
+  MY_HANDLE,
   SITE_DESCRIPTION,
   SITE_HOME_URL,
   SITE_NAME,
   SITE_SHORT_DESCRIPTION,
-  SITE_X_HANDLE,
 } from "@/config/site";
 
 type ConstructMetadataProps = {
@@ -68,7 +68,7 @@ export function constructMetadata({
       ...(video && {
         player: video,
       }),
-      creator: SITE_X_HANDLE,
+      creator: `@${MY_HANDLE}`,
     },
     metadataBase: new URL(SITE_HOME_URL),
     ...((url || canonicalUrl) && {

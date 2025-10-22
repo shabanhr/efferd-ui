@@ -3,7 +3,7 @@ import { GithubIcon, XIcon } from "@/components/icons";
 import { WordmarkIcon } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { SITE_NAME } from "@/config/site";
+import { MY_HANDLE, SITE_NAME } from "@/config/site";
 
 export function SiteHeader() {
   return (
@@ -24,7 +24,7 @@ export function SiteHeader() {
             <Button asChild size="icon-sm" variant="dashed">
               <Link
                 aria-label="x/twitter"
-                href="https://x.com/sshahaider"
+                href={`https://x.com/${MY_HANDLE}`}
                 target="_blank"
               >
                 <XIcon />
@@ -33,7 +33,7 @@ export function SiteHeader() {
             <Button asChild size="icon-sm" variant="dashed">
               <Link
                 aria-label="github"
-                href="https://github.com/sshahaider/efferd-ui"
+                href={`https://github.com/${MY_HANDLE}/efferd-ui`}
                 target="_blank"
               >
                 <GithubIcon />

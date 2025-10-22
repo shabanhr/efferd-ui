@@ -5,4 +5,4 @@ export const SITE_DESCRIPTION =
 export const SITE_SHORT_DESCRIPTION =
   "Beautiful Shadcn UI blocks and components for modern web apps.";
 export const SITE_HOME_URL = `https://${SITE_DOMAIN}`;
-export const SITE_X_HANDLE = "sshahaider";
+export const MY_HANDLE = "shabanhr";
