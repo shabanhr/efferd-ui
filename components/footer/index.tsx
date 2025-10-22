@@ -16,15 +16,6 @@ export function SiteFooter() {
           >
             Shaban
           </Link>
-          <span>—</span>
-          <Link
-            className="font-medium text-muted-foreground hover:text-foreground hover:underline"
-            href={"https://cal.com/sshahaider/10min"}
-            rel="noreferrer"
-            target="_blank"
-          >
-            Hire Me
-          </Link>
         </p>
         <p className="text-muted-foreground">
           &copy; {new Date().getFullYear()} {SITE_NAME}
