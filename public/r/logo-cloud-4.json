@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-cloud-4",
+  "type": "registry:block",
+  "description": "Animated logo carousel with soft edge blurs and gradient accents for a sleek, modern brand showcase.",
+  "registryDependencies": [
+    "https://motion-primitives.com/c/infinite-slider.json",
+    "https://motion-primitives.com/c/progressive-blur.json"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/logo-cloud/4/logo-cloud.tsx",
+      "content": "// https://motion-primitives.com/docs/infinite-slider\nimport { InfiniteSlider } from \"@/components/ui/infinite-slider\";\n// https://motion-primitives.com/docs/progressive-blur\nimport { ProgressiveBlur } from \"@/components/ui/progressive-blur\";\n\ntype Logo = {\n  src: string;\n  alt: string;\n  width?: number;\n  height?: number;\n};\n\ntype LogoCloudProps = React.ComponentProps<\"div\"> & {\n  logos: Logo[];\n};\n\nexport function LogoCloud({ logos }: LogoCloudProps) {\n  return (\n    <div className=\"relative mx-auto max-w-3xl bg-gradient-to-r from-secondary via-transparent to-secondary py-6 md:border-x\">\n      <div className=\"-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t\" />\n\n      <InfiniteSlider gap={42} reverse speed={60} speedOnHover={20}>\n        {logos.map((logo) => (\n          <img\n            alt={logo.alt}\n            className=\"pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert\"\n            height=\"auto\"\n            key={`logo-${logo.alt}`}\n            loading=\"lazy\"\n            src={logo.src}\n            width=\"auto\"\n          />\n        ))}\n      </InfiniteSlider>\n\n      <ProgressiveBlur\n        blurIntensity={1}\n        className=\"pointer-events-none absolute top-0 left-0 h-full w-[160px]\"\n        direction=\"left\"\n      />\n      <ProgressiveBlur\n        blurIntensity={1}\n        className=\"pointer-events-none absolute top-0 right-0 h-full w-[160px]\"\n        direction=\"right\"\n      />\n\n      <div className=\"-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "logo-cloud"
+  ]
+}

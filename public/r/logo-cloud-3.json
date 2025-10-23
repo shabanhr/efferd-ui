@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-cloud-3",
+  "type": "registry:block",
+  "description": "Smooth infinite-scrolling logo showcase highlighting trusted brands with gradient masking and elegant motion effects.",
+  "registryDependencies": [
+    "https://motion-primitives.com/c/infinite-slider.json"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/logo-cloud/3/logo-cloud.tsx",
+      "content": "// https://motion-primitives.com/docs/infinite-slider\nimport { InfiniteSlider } from \"@/components/ui/infinite-slider\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype Logo = {\n  src: string;\n  alt: string;\n  width?: number;\n  height?: number;\n};\n\ntype LogoCloudProps = React.ComponentProps<\"div\"> & {\n  logos: Logo[];\n};\n\nexport function LogoCloud({ className, logos, ...props }: LogoCloudProps) {\n  return (\n    <div\n      {...props}\n      className={cn(\n        \"overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black,transparent)]\",\n        className\n      )}\n    >\n      <InfiniteSlider gap={42} reverse speed={80} speedOnHover={25}>\n        {logos.map((logo) => (\n          <img\n            alt={logo.alt}\n            className=\"pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert\"\n            height={logo.height || \"auto\"}\n            key={`logo-${logo.alt}`}\n            loading=\"lazy\"\n            src={logo.src}\n            width={logo.width || \"auto\"}\n          />\n        ))}\n      </InfiniteSlider>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "logo-cloud"
+  ]
+}

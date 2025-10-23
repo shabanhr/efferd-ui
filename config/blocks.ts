@@ -517,6 +517,78 @@ export const blocks: Block[] = [
     ]
   },
   {
+    "name": "logo-cloud-1",
+    "category": "logo-cloud",
+    "description": "Simple logo grid displaying brand icons in a clean, bordered layout with light and dark mode support.",
+    "block_number": "1",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/logo-cloud/1/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "logo-cloud.tsx",
+        "path": "registry/blocks/logo-cloud/1/logo-cloud.tsx"
+      }
+    ]
+  },
+  {
+    "name": "logo-cloud-2",
+    "category": "logo-cloud",
+    "description": "Stylish logo grid featuring top tech brands with decorative plus icons and dynamic borders for a modern visual layout.",
+    "block_number": "2",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/logo-cloud/2/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "logo-cloud.tsx",
+        "path": "registry/blocks/logo-cloud/2/logo-cloud.tsx"
+      }
+    ]
+  },
+  {
+    "name": "logo-cloud-3",
+    "category": "logo-cloud",
+    "description": "Smooth infinite-scrolling logo showcase highlighting trusted brands with gradient masking and elegant motion effects.",
+    "block_number": "3",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/logo-cloud/3/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "logo-cloud.tsx",
+        "path": "registry/blocks/logo-cloud/3/logo-cloud.tsx"
+      }
+    ]
+  },
+  {
+    "name": "logo-cloud-4",
+    "category": "logo-cloud",
+    "description": "Animated logo carousel with soft edge blurs and gradient accents for a sleek, modern brand showcase.",
+    "block_number": "4",
+    "files": [
+      {
+        "type": "page",
+        "name": "page.tsx",
+        "path": "registry/blocks/logo-cloud/4/page.tsx"
+      },
+      {
+        "type": "component",
+        "name": "logo-cloud.tsx",
+        "path": "registry/blocks/logo-cloud/4/logo-cloud.tsx"
+      }
+    ]
+  },
+  {
     "name": "not-found-1",
     "category": "not-found",
     "description": "Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.",

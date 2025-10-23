@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-cloud-1",
+  "type": "registry:block",
+  "description": "Simple logo grid displaying brand icons in a clean, bordered layout with light and dark mode support.",
+  "files": [
+    {
+      "path": "registry/blocks/logo-cloud/1/logo-cloud.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\n\ntype Logo = {\n  src: string;\n  alt: string;\n  width?: number;\n  height?: number;\n};\n\ntype LogoCloudProps = React.ComponentProps<\"div\"> & {\n  logos: Logo[];\n};\n\nexport function LogoCloud({ logos, className, ...props }: LogoCloudProps) {\n  return (\n    <div\n      className={cn(\n        \"mx-auto grid max-w-3xl grid-cols-2 rounded-lg bg-border shadow md:grid-cols-4\",\n        className\n      )}\n      {...props}\n    >\n      {logos.map((logo) => (\n        <div\n          className=\"flex items-center justify-center rounded-lg border bg-background p-8\"\n          key={logo.alt}\n        >\n          <img\n            alt={logo.alt}\n            className=\"pointer-events-none block h-4 select-none md:h-5 dark:brightness-0 dark:invert\"\n            height={logo.height ?? \"auto\"}\n            loading=\"lazy\"\n            src={logo.src}\n            width={logo.width ?? \"auto\"}\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "categories": [
+    "logo-cloud"
+  ]
+}

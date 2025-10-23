@@ -502,6 +502,69 @@
       ]
     },
     {
+      "name": "logo-cloud-1",
+      "type": "registry:block",
+      "description": "Simple logo grid displaying brand icons in a clean, bordered layout with light and dark mode support.",
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/1/logo-cloud.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "logo-cloud"
+      ]
+    },
+    {
+      "name": "logo-cloud-2",
+      "type": "registry:block",
+      "description": "Stylish logo grid featuring top tech brands with decorative plus icons and dynamic borders for a modern visual layout.",
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/2/logo-cloud.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "logo-cloud"
+      ]
+    },
+    {
+      "name": "logo-cloud-3",
+      "type": "registry:block",
+      "description": "Smooth infinite-scrolling logo showcase highlighting trusted brands with gradient masking and elegant motion effects.",
+      "registryDependencies": [
+        "https://motion-primitives.com/c/infinite-slider.json"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/3/logo-cloud.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "logo-cloud"
+      ]
+    },
+    {
+      "name": "logo-cloud-4",
+      "type": "registry:block",
+      "description": "Animated logo carousel with soft edge blurs and gradient accents for a sleek, modern brand showcase.",
+      "registryDependencies": [
+        "https://motion-primitives.com/c/infinite-slider.json",
+        "https://motion-primitives.com/c/progressive-blur.json"
+      ],
+      "files": [
+        {
+          "path": "registry/blocks/logo-cloud/4/logo-cloud.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": [
+        "logo-cloud"
+      ]
+    },
+    {
       "name": "not-found-1",
       "type": "registry:block",
       "description": "Minimal 404 error page with bold typography, subtle borders, and clear navigation actions.",
