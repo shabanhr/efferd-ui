@@ -33,7 +33,7 @@ export function SiteHeader() {
             <Button asChild size="icon-sm" variant="dashed">
               <Link
                 aria-label="github"
-                href={`https://github.com/${MY_HANDLE}/efferd`}
+                href={`https://github.com/${MY_HANDLE}/efferd-ui`}
                 target="_blank"
               >
                 <GithubIcon />
