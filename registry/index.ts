@@ -18,7 +18,7 @@ const DEFAULT: RegistryItem = {
 };
 
 export const registry = {
-  name: "efferd-ui",
+  name: "efferd",
   homepage: SITE_HOME_URL,
   items: z.array(registryItemSchema).parse([DEFAULT, ...blocks]),
 } satisfies Registry;

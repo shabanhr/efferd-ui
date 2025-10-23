@@ -58,7 +58,7 @@ export function BlockBox({ block }: BlockPreviewProps) {
           />
         </div>
         <div className="flex items-center gap-3">
-          <CopyCliButton name={name} />
+          <CopyCliButton name={name} registryUrl={registryUrl} />
           <div className="h-5 border-r border-dashed" />
           <OpenInV0Button name={name} registryUrl={registryUrl} />
           <OpenInNewTabButton previewLink={previewLink} />
