@@ -9,8 +9,8 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
       <main
         className={cn(
           "container relative grow",
-          "before:-inset-y-20 before:absolute before:left-0 before:z-1 before:border-border before:border-dashed xl:before:border-l",
-          "after:-inset-y-20 after:absolute after:right-0 after:z-1 after:border-border after:border-dashed xl:after:border-r"
+          "before:-inset-y-20 before:-left-px before:absolute before:z-1 before:border-border before:border-dashed xl:before:border-l",
+          "after:-inset-y-20 after:-right-px after:absolute after:z-1 after:border-border after:border-dashed xl:after:border-r"
         )}
       >
         {children}

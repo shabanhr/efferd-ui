@@ -7,14 +7,14 @@ export function BorderSeparator({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("relative", className)} {...props}>
-      <div
-        aria-hidden="true"
-        className={cn(
-          "-translate-x-1/2 pointer-events-none absolute top-0 left-1/2 w-screen border-t border-dashed",
-          className
-        )}
-      />
+    <div
+      aria-hidden="true"
+      className={cn(
+        "-translate-x-1/2 pointer-events-none absolute left-1/2 w-screen border-t border-dashed",
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   );

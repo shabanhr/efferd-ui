@@ -41,10 +41,10 @@ export function BlockBox({ block }: BlockPreviewProps) {
 
   return (
     <div className="border-b border-dashed" id={name}>
-      <BorderSeparator className="z-1" />
-
       {/* Toolbar */}
       <div className="relative flex items-center justify-between bg-card px-4 py-1.5">
+        <BorderSeparator className="-top-px z-1" />
+
         <div className="flex items-center gap-3">
           <TogglePreviewMode
             name={name}
@@ -57,15 +57,16 @@ export function BlockBox({ block }: BlockPreviewProps) {
             isRefreshing={isRefreshing}
           />
         </div>
+
         <div className="flex items-center gap-3">
           <CopyCliButton name={name} />
           <div className="h-5 border-r border-dashed" />
           <OpenInV0Button name={name} registryUrl={registryUrl} />
           <OpenInNewTabButton previewLink={previewLink} />
         </div>
-      </div>
 
-      <BorderSeparator className="z-1" />
+        <BorderSeparator className="-bottom-px z-1" />
+      </div>
 
       {/* Preview */}
       <BlockPreview previewMode={previewMode}>
