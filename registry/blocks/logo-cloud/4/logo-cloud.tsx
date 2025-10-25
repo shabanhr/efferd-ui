@@ -2,6 +2,7 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 // https://motion-primitives.com/docs/progressive-blur
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import { cn } from "@/lib/utils";
 
 type Logo = {
   src: string;
@@ -14,11 +15,15 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
   logos: Logo[];
 };
 
-export function LogoCloud({ logos }: LogoCloudProps) {
+export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
   return (
-    <div className="relative mx-auto max-w-3xl bg-gradient-to-r from-secondary via-transparent to-secondary py-6 md:border-x">
-      <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
-
+    <div
+      className={cn(
+        "mx-auto max-w-3xl border bg-gradient-to-r from-secondary via-transparent to-secondary py-6",
+        className
+      )}
+      {...props}
+    >
       <InfiniteSlider gap={42} reverse speed={60} speedOnHover={20}>
         {logos.map((logo) => (
           <img
@@ -35,16 +40,14 @@ export function LogoCloud({ logos }: LogoCloudProps) {
 
       <ProgressiveBlur
         blurIntensity={1}
-        className="pointer-events-none absolute top-0 left-0 h-full w-[160px]"
+        className="pointer-events-none absolute top-0 left-0 h-full w-[100px] md:w-[160px]"
         direction="left"
       />
       <ProgressiveBlur
         blurIntensity={1}
-        className="pointer-events-none absolute top-0 right-0 h-full w-[160px]"
+        className="-[100px] pointer-events-none absolute top-0 right-0 h-full md:w-[160px]"
         direction="right"
       />
-
-      <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b" />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { LogoCloud } from "./logo-cloud";
 
 export default function Page() {
   return (
-    <div className="min-h-screen w-full place-content-center">
+    <div className="min-h-screen w-full place-content-center p-4">
       <div className="w-full">
         <h2 className="mb-5 text-center">
           <span className="block font-medium text-2xl text-muted-foreground">
@@ -12,8 +12,11 @@ export default function Page() {
             Best in the Game
           </span>
         </h2>
-
-        <LogoCloud logos={logos} />
+        <div className="relative">
+          <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
+          <LogoCloud className="border-y-0" logos={logos} />
+          <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b" />
+        </div>
       </div>
     </div>
   );

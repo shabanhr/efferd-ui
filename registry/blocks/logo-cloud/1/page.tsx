@@ -2,7 +2,7 @@ import { LogoCloud } from "./logo-cloud";
 
 export default function Page() {
   return (
-    <div className="min-h-screen w-full place-content-center">
+    <div className="min-h-screen w-full place-content-center p-4">
       <div className="w-full space-y-5">
         <h2 className="text-center font-medium text-lg tracking-tight md:font-semibold md:text-2xl">
           <span className="text-muted-foreground">
