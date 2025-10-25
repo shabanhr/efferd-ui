@@ -6,15 +6,13 @@ import { ShadcnIcon } from "../icons";
 
 type CopyCliButtonProps = {
   name: string;
-  registryUrl: string;
 };
 
-export function CopyCliButton({ name, registryUrl }: CopyCliButtonProps) {
+export function CopyCliButton({ name }: CopyCliButtonProps) {
   const { copied, copy } = useCopyToClipboard();
 
   const handleCopy = () => {
-    // copy(`pnpm dlx shadcn@latest add @efferd/${name}`);
-    copy(`pnpm dlx shadcn@latest add ${registryUrl}`);
+    copy(`pnpm dlx shadcn@latest add @efferd/${name}`);
     sendGAEvent("event", "copy_cli", {
       block_name: name,
     });
