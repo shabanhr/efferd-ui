@@ -19,7 +19,7 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
   return (
     <div
       className={cn(
-        "mx-auto max-w-3xl border bg-gradient-to-r from-secondary via-transparent to-secondary py-6",
+        "relative mx-auto max-w-3xl border bg-gradient-to-r from-secondary via-transparent to-secondary py-6",
         className
       )}
       {...props}
@@ -45,7 +45,7 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
       />
       <ProgressiveBlur
         blurIntensity={1}
-        className="-[100px] pointer-events-none absolute top-0 right-0 h-full md:w-[160px]"
+        className="pointer-events-none absolute top-0 right-0 h-full w-[100px] md:w-[160px]"
         direction="right"
       />
     </div>
