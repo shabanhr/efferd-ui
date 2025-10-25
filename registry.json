@@ -1,6 +1,6 @@
 {
-  "name": "efferd-ui",
-  "homepage": "https://ui.efferd.com",
+  "name": "efferd",
+  "homepage": "https://efferd.com",
   "items": [
     {
       "name": "index",

@@ -9,7 +9,7 @@ export function FaqsSection() {
   return (
     <div className="mx-auto w-full max-w-3xl space-y-7 px-4 pt-16">
       <div className="space-y-2">
-        <h2 className="font-bold text-3xl md:text-4xl">
+        <h2 className="font-semibold text-3xl md:text-4xl">
           Frequently Asked Questions
         </h2>
         <p className="max-w-2xl text-muted-foreground">
@@ -19,7 +19,7 @@ export function FaqsSection() {
         </p>
       </div>
       <Accordion
-        className="-space-y-px w-full rounded-lg bg-card dark:bg-card/50"
+        className="-space-y-px w-full rounded-lg bg-card shadow dark:bg-card/50"
         collapsible
         defaultValue="item-1"
         type="single"

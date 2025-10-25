@@ -13,14 +13,9 @@ type LogoCloudProps = React.ComponentProps<"div">;
 export function LogoCloud({ className, ...props }: LogoCloudProps) {
   return (
     <div
-      className={cn(
-        "relative grid grid-cols-2 border-x md:grid-cols-4",
-        className
-      )}
+      className={cn("grid grid-cols-2 border md:grid-cols-4", className)}
       {...props}
     >
-      <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
-
       <LogoCard
         className="relative border-r border-b bg-secondary dark:bg-secondary/30"
         logo={{
@@ -103,8 +98,6 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
           alt: "Vercel Logo",
         }}
       />
-
-      <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b" />
     </div>
   );
 }

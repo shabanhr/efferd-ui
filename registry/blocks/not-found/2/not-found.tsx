@@ -37,10 +37,10 @@ export function NotFoundPage() {
             ],
             rotate: [0, 10, -10, 0],
           }}
-          className="absolute top-1/2 left-1/3 h-64 w-64 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-3xl"
+          className="absolute top-1/2 left-1/3 size-90 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-3xl"
           transition={{
             repeat: Number.POSITIVE_INFINITY,
-            duration: 5,
+            duration: 4,
             ease: "easeInOut",
           }}
         />
@@ -59,10 +59,10 @@ export function NotFoundPage() {
               0,
             ],
           }}
-          className="absolute right-1/4 bottom-1/3 h-72 w-72 rounded-full bg-gradient-to-br from-indigo-400/10 to-pink-400/10 blur-3xl"
+          className="absolute right-1/4 bottom-1/3 size-120 rounded-full bg-gradient-to-br from-indigo-400/10 to-pink-400/10 blur-3xl"
           transition={{
             repeat: Number.POSITIVE_INFINITY,
-            duration: 5,
+            duration: 4,
             ease: "easeInOut",
           }}
         />

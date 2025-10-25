@@ -80,15 +80,15 @@ export default function Page() {
         </div>
 
         <div className="mt-10 flex max-h-[740px] justify-center gap-6 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
-          <TestimonialsColumn duration={15} testimonials={firstColumn} />
+          <TestimonialsColumn duration={16} testimonials={firstColumn} />
           <TestimonialsColumn
             className="hidden md:block"
-            duration={19}
+            duration={20}
             testimonials={secondColumn}
           />
           <TestimonialsColumn
             className="hidden lg:block"
-            duration={17}
+            duration={18}
             testimonials={thirdColumn}
           />
         </div>

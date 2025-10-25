@@ -44,9 +44,9 @@ export function FaqsSection() {
   });
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-4xl md:border-x">
+    <div className="mx-auto min-h-screen w-full max-w-3xl md:border-x">
       <div className="px-4 py-16 lg:px-6">
-        <h1 className="mb-4 font-bold text-3xl md:text-4xl">
+        <h1 className="mb-4 font-semibold text-3xl md:text-4xl">
           Frequently Asked Questions
         </h1>
         <p className="mb-8 max-w-2xl text-muted-foreground">
@@ -68,7 +68,7 @@ export function FaqsSection() {
 
       <div className="absolute inset-x-0 h-px bg-border" />
 
-      <div className="flex flex-wrap gap-3 border-b px-4">
+      <div className="flex flex-wrap gap-1 border-b px-4 md:gap-3">
         {categories.map((cat) => (
           <button
             className="flex flex-col"
@@ -78,14 +78,14 @@ export function FaqsSection() {
           >
             <span
               className={cn(
-                "p-1 text-muted-foreground text-xs hover:text-primary md:p-2 md:text-base",
+                "p-1 text-muted-foreground text-sm hover:text-primary md:p-2 md:text-base",
                 activeCategory === cat.id && "text-primary"
               )}
             >
               {cat.label}
             </span>
             {activeCategory === cat.id && (
-              <span className="h-0.5 w-full rounded-full bg-primary text-xs" />
+              <span className="h-0.5 w-full rounded-full bg-primary" />
             )}
           </button>
         ))}
@@ -99,7 +99,7 @@ export function FaqsSection() {
       >
         {filtered.map((faq) => (
           <AccordionItem
-            className="rounded-md border bg-card shadow outline-none last:border-b has-focus-visible:border-ring dark:bg-card/40 dark:hover:bg-card/60"
+            className="rounded-md border bg-card/20 shadow outline-none last:border-b has-focus-visible:border-ring data-[state=open]:bg-card"
             key={faq.id}
             value={faq.id.toString()}
           >

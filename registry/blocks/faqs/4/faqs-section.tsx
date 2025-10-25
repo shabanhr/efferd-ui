@@ -34,8 +34,8 @@ export function FaqsSection() {
 
   return (
     <section className="mx-auto min-h-screen w-full max-w-5xl">
-      <div className="flex flex-col items-center justify-center gap-4 px-4 pt-12 pb-16">
-        <h2 className="text-balance font-bold font-mono text-4xl md:text-5xl lg:font-black">
+      <div className="flex flex-col items-center justify-center gap-4 px-4 py-16">
+        <h2 className="text-balance font-black font-mono text-4xl md:text-5xl lg:font-black">
           FaQs
         </h2>
         <p className="text-muted-foreground">Your questions answered here.</p>
@@ -82,7 +82,7 @@ export function FaqsSection() {
                   {item.title}
                 </AccordionTrigger>
 
-                <AccordionContent className="px-4 py-4 text-muted-foreground">
+                <AccordionContent className="px-4 py-4">
                   {item.content}
                 </AccordionContent>
               </AccordionItem>

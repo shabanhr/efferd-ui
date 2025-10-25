@@ -3,7 +3,7 @@ import { LazyImage } from "./lazy-image";
 export function ImageGallery() {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center px-4 py-10">
-      <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+      <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-6">
         {Array.from({ length: 4 }).map((_, col) => (
           <div className="grid gap-4" key={col}>
             {/* biome-ignore lint/nursery/noShadow: false positive */}

@@ -12,10 +12,10 @@ export function CallToAction() {
       <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
 
       <div className="space-y-1">
-        <h2 className="text-center font-bold text-2xl tracking-tight md:font-extrabold md:text-4xl">
+        <h2 className="text-center font-semibold text-2xl tracking-tight md:text-4xl">
           Subscripe to our newsletter
         </h2>
-        <p className="text-center text-muted-foreground text-sm md:text-base">
+        <p className="text-balance text-center text-muted-foreground text-sm md:text-base">
           Get the latest updates and insights delivered right to your inbox.
         </p>
       </div>
@@ -33,7 +33,9 @@ export function CallToAction() {
       </div>
       <div className="flex items-center justify-center gap-2">
         <p className="text-muted-foreground text-sm">
-          Our experts are ready to help
+          Written by{" "}
+          <span className="font-medium text-foreground">real humans</span> (we
+          swear).
         </p>
         <div className="-space-x-[0.45rem] flex">
           <img

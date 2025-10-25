@@ -64,30 +64,18 @@ export function LazyImage({
   return (
     <AspectRatio
       className={cn(
-        "relative size-full overflow-hidden rounded-lg border",
+        "relative size-full overflow-hidden rounded-lg border bg-accent/30",
         AspectRatioClassName
       )}
       ratio={ratio}
       ref={ref}
     >
-      {/* Skeleton / fallback */}
-      <div
-        className={cn(
-          "absolute inset-0 animate-pulse rounded-md bg-accent/30 transition-opacity",
-          isLoading ? "opacity-100" : "opacity-0"
-        )}
-        style={{
-          willChange: "opacity",
-          transitionTimingFunction: "ease-out",
-        }}
-      />
-
       {imgSrc && (
         // biome-ignore lint/nursery/useImageSize: dynamic image size
         <img
           alt={alt}
           className={cn(
-            "size-full rounded-md object-cover transition-opacity",
+            "size-full rounded-md object-cover transition-opacity duration-500",
             isLoading ? "opacity-0" : "opacity-100",
             className
           )}
@@ -99,11 +87,6 @@ export function LazyImage({
           ref={imgRef}
           role="presentation" // Changed from "img" to "presentation" since it's decorative
           src={imgSrc}
-          style={{
-            transitionDuration: "1s ",
-            willChange: "opacity",
-            transitionTimingFunction: "ease-in-out",
-          }}
         />
       )}
     </AspectRatio>

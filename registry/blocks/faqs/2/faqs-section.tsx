@@ -8,9 +8,9 @@ import {
 export function FaqsSection() {
   return (
     <div className="mx-auto min-h-screen w-full max-w-5xl lg:border-x">
-      <div className="grid h-[calc(100vh-3.5rem)] grid-cols-1 md:grid-cols-2">
+      <div className="mx-4 grid h-[calc(100vh-3.5rem)] grid-cols-1 border-x md:mx-0 md:grid-cols-2 md:border-x-0">
         <div className="space-y-4 px-4 pt-12 pb-4 md:border-r">
-          <h2 className="font-bold text-2xl md:text-3xl">FAQs</h2>
+          <h2 className="font-black text-3xl md:text-4xl">FAQs</h2>
           <p className="text-muted-foreground">
             Here are some common questions and answers that you might encounter
             when using Efferd.
@@ -20,7 +20,7 @@ export function FaqsSection() {
           <Accordion collapsible defaultValue="item-1" type="single">
             {questions.map((item) => (
               <AccordionItem
-                className="first:border-t last:border-b"
+                className="first:border-t last:border-b data-[state=open]:bg-card"
                 key={item.id}
                 value={item.id}
               >

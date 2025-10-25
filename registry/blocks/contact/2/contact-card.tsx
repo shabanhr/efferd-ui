@@ -28,19 +28,31 @@ export function ContactCard({
   return (
     <div
       className={cn(
-        "relative grid h-full w-full border bg-muted/20 md:grid-cols-2 lg:grid-cols-3",
+        "relative grid h-full w-full border md:grid-cols-2 lg:grid-cols-3",
         className
       )}
       {...props}
     >
-      <PlusIcon className="-top-3 -left-3 absolute h-6 w-6" />
-      <PlusIcon className="-top-3 -right-3 absolute h-6 w-6" />
-      <PlusIcon className="-bottom-3 -left-3 absolute h-6 w-6" />
-      <PlusIcon className="-right-3 -bottom-3 absolute h-6 w-6" />
+      <PlusIcon
+        className="-top-[12.5px] -left-[12.5px] absolute h-6 w-6"
+        strokeWidth={1}
+      />
+      <PlusIcon
+        className="-top-[12.5px] -right-[12.5px] absolute h-6 w-6"
+        strokeWidth={1}
+      />
+      <PlusIcon
+        className="-bottom-[12.5px] -left-[12.5px] absolute h-6 w-6"
+        strokeWidth={1}
+      />
+      <PlusIcon
+        className="-right-[12.5px] -bottom-[12.5px] absolute h-6 w-6"
+        strokeWidth={1}
+      />
 
-      <div className="col-span-1 flex flex-col justify-between lg:col-span-2">
+      <div className="col-span-1 flex flex-col justify-between bg-secondary/50 lg:col-span-2 dark:bg-background">
         <div className="relative h-full space-y-4 px-4 py-8 md:p-8">
-          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl">
+          <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl">
             {title}
           </h1>
           <p className="max-w-xl text-muted-foreground text-sm md:text-base lg:text-lg">
@@ -55,7 +67,7 @@ export function ContactCard({
       </div>
       <div
         className={cn(
-          "col-span-1 flex h-full w-full items-center border-t bg-card p-5 md:border-t-0 md:border-l",
+          "col-span-1 flex h-full w-full items-center border-t bg-card px-4 py-8 md:border-t-0 md:border-l dark:bg-card/50",
           formSectionClassName
         )}
       >

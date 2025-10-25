@@ -68,12 +68,8 @@ export function PricingSection() {
     },
   ];
 
-  const handleClick = (plan: string) => {
-    alert(`Selected ${plan} plan!`);
-  };
-
   return (
-    <section className="mx-auto grid w-full max-w-5xl gap-4 p-6 md:grid-cols-3">
+    <section className="mx-auto grid w-full max-w-4xl gap-4 p-6 md:grid-cols-3">
       {plans.map((plan, index) => (
         <PricingCard.Card
           className={cn("w-full max-w-full", index === 1 && "md:scale-105")}
@@ -100,8 +96,7 @@ export function PricingSection() {
             </PricingCard.Price>
             <Button
               className={cn("w-full font-semibold")}
-              onClick={() => handleClick(plan.name)}
-              variant={plan.variant as any}
+              variant={plan.variant as "outline" | "default"}
             >
               Get Started
             </Button>
@@ -113,7 +108,7 @@ export function PricingSection() {
             </PricingCard.Description>
             <PricingCard.List>
               {plan.features.map((item) => (
-                <PricingCard.ListItem key={item}>
+                <PricingCard.ListItem className="text-xs" key={item}>
                   <CheckCircle2
                     aria-hidden="true"
                     className="h-4 w-4 text-foreground"

@@ -34,10 +34,22 @@ export function PricingSection() {
         whileInView={{ opacity: 1, y: 0 }}
       >
         <div className="relative grid border bg-background p-4 md:grid-cols-2">
-          <PlusIcon className="-top-2 -left-2 absolute size-4 text-foreground" />
-          <PlusIcon className="-top-2 -right-2 absolute size-4 text-foreground" />
-          <PlusIcon className="-bottom-2 -left-2 absolute size-4 text-foreground" />
-          <PlusIcon className="-right-2 -bottom-2 absolute size-4 text-foreground" />
+          <PlusIcon
+            className="-top-[10.5px] -left-[10.5px] absolute size-5 text-foreground"
+            strokeWidth={1}
+          />
+          <PlusIcon
+            className="-top-[10.5px] -right-[10.5px] absolute size-5 text-foreground"
+            strokeWidth={1}
+          />
+          <PlusIcon
+            className="-bottom-[10.5px] -left-[10.5px] absolute size-5 text-foreground"
+            strokeWidth={1}
+          />
+          <PlusIcon
+            className="-right-[10.5px] -bottom-[10.5px] absolute size-5 text-foreground"
+            strokeWidth={1}
+          />
 
           <div className="w-full px-4 pt-5 pb-4">
             <div className="space-y-1">

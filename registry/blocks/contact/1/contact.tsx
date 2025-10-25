@@ -1,15 +1,6 @@
 "use client";
 
-import {
-  GithubIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  type LucideIcon,
-  Mail,
-  MapPin,
-  Phone,
-  TwitterIcon,
-} from "lucide-react";
+import { type LucideIcon, Mail, MapPin, Phone } from "lucide-react";
 import type React from "react";
 import { cn } from "@/lib/utils";
 
@@ -25,33 +16,15 @@ export function Contact() {
       label: "GitHub",
     },
     {
-      icon: TwitterIcon,
+      icon: XIcon,
       href: "#",
       label: "Twitter",
-    },
-    {
-      icon: LinkedinIcon,
-      href: "#",
-      label: "LinkedIn",
-    },
-    {
-      icon: InstagramIcon,
-      href: "#",
-      label: "Instagram",
     },
   ];
 
   return (
     <div className="mx-auto h-full min-h-screen max-w-5xl lg:border-x">
-      <div
-        aria-hidden
-        className="-z-10 absolute inset-0 isolate opacity-60 contain-strict"
-      >
-        <div className="-translate-y-87.5 -rotate-45 absolute top-0 left-0 h-320 w-140 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,--theme(--color-foreground/.06)_0,hsla(0,0%,55%,.02)_50%,--theme(--color-foreground/.01)_80%)]" />
-        <div className="-rotate-45 absolute top-0 left-0 h-320 w-60 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,--theme(--color-foreground/.04)_0,--theme(--color-foreground/.01)_80%,transparent_100%)] [translate:5%_-50%]" />
-        <div className="-translate-y-87.5 -rotate-45 absolute top-0 left-0 h-320 w-60 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,--theme(--color-foreground/.04)_0,--theme(--color-foreground/.01)_80%,transparent_100%)]" />
-      </div>
-      <div className="flex grow flex-col justify-center px-4 py-18">
+      <div className="flex grow flex-col justify-center px-4 py-18 md:items-center">
         <h1 className="font-bold text-4xl md:text-5xl">Contact Us</h1>
         <p className="mb-5 text-base text-muted-foreground">
           Contact the support team at efferd.
@@ -103,9 +76,9 @@ export function Contact() {
         </Box>
       </div>
       <BorderSeparator />
-      <div className="z-1 flex h-full min-h-[320px] flex-col items-center justify-center gap-4">
-        <h2 className="text-center font-bold text-3xl md:text-4xl">
-          Find us online
+      <div className="z-1 flex h-full flex-col items-center justify-center gap-4 py-24">
+        <h2 className="text-center font-medium text-2xl text-muted-foreground tracking-tight md:text-3xl">
+          Find us <span className="text-foreground">online</span>
         </h2>
         <div className="flex flex-wrap items-center gap-2">
           {socialLinks.map((link) => (
@@ -116,8 +89,8 @@ export function Contact() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <link.icon className="size-4" />
-              <span className="font-medium font-mono text-sm">
+              <link.icon className="size-3.5 text-muted-foreground" />
+              <span className="font-medium font-mono text-xs tracking-wide">
                 {link.label}
               </span>
             </a>
@@ -128,8 +101,10 @@ export function Contact() {
   );
 }
 
-function BorderSeparator() {
-  return <div className="absolute inset-x-0 h-px w-full border-b" />;
+function BorderSeparator({ className }: React.ComponentProps<"div">) {
+  return (
+    <div className={cn("absolute inset-x-0 h-px w-full border-b", className)} />
+  );
 }
 
 type ContactBox = React.ComponentProps<"div"> & {
@@ -152,7 +127,7 @@ function Box({
         className
       )}
     >
-      <div className="flex items-center gap-x-3 border-b bg-muted/40 p-4">
+      <div className="flex items-center gap-x-3 border-b bg-secondary/50 p-4 dark:bg-secondary/20">
         <props.icon className="size-5 text-muted-foreground" strokeWidth={1} />
         <h2 className="font-heading font-medium text-lg tracking-wider">
           {title}
@@ -165,3 +140,26 @@ function Box({
     </div>
   );
 }
+
+const GithubIcon = (props: React.ComponentProps<"svg">) => (
+  <svg fill="currentColor" viewBox="0 0 1024 1024" {...props}>
+    <path
+      clipRule="evenodd"
+      d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z"
+      fill="currentColor"
+      fillRule="evenodd"
+      transform="scale(64)"
+    />
+  </svg>
+);
+
+const XIcon = (props: React.ComponentProps<"svg">) => (
+  <svg
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path d="m18.9,1.153h3.682l-8.042,9.189,9.46,12.506h-7.405l-5.804-7.583-6.634,7.583H.469l8.6-9.831L0,1.153h7.593l5.241,6.931,6.065-6.931Zm-1.293,19.494h2.039L6.482,3.239h-2.19l13.314,17.408Z" />
+  </svg>
+);

@@ -66,7 +66,7 @@ export function PricingSection({
       </div>
 
       <FrequencyToggle frequency={frequency} setFrequency={setFrequency} />
-      <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-5 md:grid-cols-3">
+      <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
         {plans.map((plan) => (
           <PricingCard frequency={frequency} key={plan.name} plan={plan} />
         ))}
