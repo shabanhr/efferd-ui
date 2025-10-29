@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BorderSeparator } from "@/components/sheard";
+import { Tweets } from "@/components/tweets";
 import { getCachedCategories } from "@/lib/utils/blocks-data";
 import type { Category } from "@/types";
 
@@ -21,12 +22,14 @@ export default function Page() {
         {categories.map((category) => (
           <CategoryCard key={category.id} {...category} />
         ))}
-        <div className="flex aspect-video flex-col items-center justify-center rounded-md border border-dashed p-2">
+        <div className="flex aspect-video flex-col items-center justify-center rounded-md border p-2">
           <p className="font-heading font-semibold text-muted-foreground text-sm md:text-lg">
             Coming Soon
           </p>
         </div>
       </div>
+      <BorderSeparator />
+      <Tweets />
     </div>
   );
 }
@@ -34,11 +37,11 @@ export default function Page() {
 function CategoryCard({ id, name, blocksCount, isNew }: Category) {
   return (
     <Link
-      className="relative flex aspect-video flex-col items-center justify-center rounded-md border border-dashed bg-card p-2 shadow hover:bg-accent dark:bg-card/50 dark:hover:bg-accent/50"
+      className="relative flex aspect-video flex-col items-center justify-center rounded-md border bg-card p-2 shadow hover:bg-accent dark:bg-card/50 dark:hover:bg-accent/50"
       href={`/${id}`}
     >
       {isNew && (
-        <span className="absolute top-1 left-1 rounded-tl-md border border-dashed bg-card px-1 py-0.5 font-mono font-semibold text-xs tracking-wider">
+        <span className="absolute top-1 left-1 rounded-tl-md border bg-card px-1 py-0.5 font-mono font-semibold text-muted-foreground text-xs tracking-wider">
           NEW
         </span>
       )}
