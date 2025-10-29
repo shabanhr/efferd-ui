@@ -3,7 +3,7 @@ import { capitalize, unslugify } from "@/lib/utils";
 import type { Block, Category } from "@/types";
 
 export const BLOCKS_DIR = "registry/blocks";
-const newCategories = ["logo-cloud", "faqs"];
+const newCategories = ["logo-cloud", "form"];
 
 export function getAllCategories(): Category[] {
   const categoryMap = new Map<string, number>();

@@ -339,6 +339,74 @@ export const blocks: RegistryItem[] = [
     categories: ["footer"],
   },
   {
+    name: "form-1",
+    type: "registry:block",
+    description:
+      "Elegant workspace creation form with labeled inputs, grouped fields, and a clean card layout for onboarding users smoothly.",
+    registryDependencies: [
+      "button",
+      "button-group",
+      "field",
+      "input",
+      "input-group",
+      "label",
+    ],
+    files: [
+      {
+        path: "blocks/form/1/create-workspace-form.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "@/components/logo.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["form"],
+    meta: {
+      height: "80vh",
+    },
+  },
+  {
+    name: "form-2",
+    type: "registry:block",
+    description:
+      "Project submission form featuring bordered layout, plus-icon corners, and detailed input fields for name, repository, and description.",
+    registryDependencies: [
+      "button",
+      "field",
+      "input",
+      "input-group",
+      "textarea",
+    ],
+    files: [
+      {
+        path: "blocks/form/2/submit-project-form.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["form"],
+  },
+  {
+    name: "form-3",
+    type: "registry:block",
+    description:
+      "Comprehensive account settings form with structured fields for name, email, password, and phone number, featuring icons, grouped inputs, and save actions.",
+    registryDependencies: [
+      "button",
+      "button-group",
+      "field",
+      "input",
+      "input-group",
+    ],
+    files: [
+      {
+        path: "blocks/form/3/settings-form.tsx",
+        type: "registry:component",
+      },
+    ],
+    categories: ["form"],
+  },
+  {
     name: "header-1",
     type: "registry:block",
     description:
