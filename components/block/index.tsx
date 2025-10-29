@@ -23,7 +23,7 @@ export function BlockBox({ block }: BlockPreviewProps) {
   const iframeContainerRef = React.useRef<HTMLDivElement>(null);
   const [registryUrl, setRegistryUrl] = React.useState<string>("");
 
-  const { name, files } = block;
+  const { name, files, height } = block;
   const previewLink = `/view/${name}`;
 
   React.useEffect(() => {
@@ -40,7 +40,11 @@ export function BlockBox({ block }: BlockPreviewProps) {
     });
 
   return (
-    <div className="border-b border-dashed" id={name}>
+    <div
+      className="border-b border-dashed"
+      id={name}
+      style={{ "--block-height": height } as React.CSSProperties}
+    >
       {/* Toolbar */}
       <div className="relative flex items-center justify-between bg-card px-4 py-1.5">
         <BorderSeparator className="-top-px z-1" />

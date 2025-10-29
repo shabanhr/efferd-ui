@@ -1,7 +1,7 @@
 "use client";
 
 import { sendGAEvent } from "@next/third-parties/google";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { ReactIcon } from "@/components/icons";
 import {
   TreeExpander,
@@ -13,7 +13,6 @@ import {
   TreeProvider,
   TreeView,
 } from "@/components/kibo-ui/tree";
-import { loadCode } from "@/lib/utils/code";
 import type { BlockFile } from "@/types";
 import { CopyButton } from "../copy-button";
 import CodeBlock from "./code-block";
@@ -26,27 +25,22 @@ type CodeViewProps = {
 };
 
 export function CodeView({ files, name }: CodeViewProps) {
-  const defaultFile = useMemo(() => {
-    if (!files?.length) {
-      return null;
-    }
-    return files.find((file) => file.name === DEFAULT_FILE_NAME) ?? files[0];
-  }, [files]);
+  const defaultFile = useMemo(
+    () => files.find((file) => file.name === DEFAULT_FILE_NAME) ?? files[0],
+    [files]
+  );
 
   const [selectedIds, setSelectedIds] = useState<string[]>(() =>
     defaultFile ? [defaultFile.name] : []
   );
   const [currentFile, setCurrentFile] = useState<BlockFile | null>(defaultFile);
-  const [currentCode, setCurrentCode] = useState<string>("");
-  const [isFetching, setIsFetching] = useState(false);
-  const codeCache = useRef(new Map<string, string>());
 
-  const componentFiles = useMemo<BlockFile[]>(
+  const componentFiles = useMemo(
     () => files.filter((file) => file.type === "component"),
     [files]
   );
 
-  const hookFiles = useMemo<BlockFile[]>(
+  const hookFiles = useMemo(
     () => files.filter((file) => file.type === "hook"),
     [files]
   );
@@ -71,14 +65,9 @@ export function CodeView({ files, name }: CodeViewProps) {
   );
 
   useEffect(() => {
-    codeCache.current.clear();
-  }, []);
-
-  useEffect(() => {
     if (!defaultFile) {
       setCurrentFile(null);
       setSelectedIds([]);
-      setCurrentCode("");
       return;
     }
 
@@ -91,52 +80,6 @@ export function CodeView({ files, name }: CodeViewProps) {
         : [defaultFile.name]
     );
   }, [defaultFile]);
-
-  useEffect(() => {
-    const filePath = currentFile?.path;
-    if (!filePath) {
-      setCurrentCode("");
-      setIsFetching(false);
-      return;
-    }
-
-    const resolvedPath = filePath;
-    const cachedCode = codeCache.current.get(resolvedPath);
-    if (cachedCode) {
-      setCurrentCode(cachedCode);
-      setIsFetching(false);
-      return;
-    }
-
-    let active = true;
-    setIsFetching(true);
-
-    async function fetchCode() {
-      try {
-        const code = await loadCode(resolvedPath);
-        if (!active) {
-          return;
-        }
-        codeCache.current.set(resolvedPath, code);
-        setCurrentCode(code);
-      } catch (_err) {
-        if (!active) {
-          return;
-        }
-        setCurrentCode("// Failed to load code");
-      } finally {
-        if (active) {
-          setIsFetching(false);
-        }
-      }
-    }
-
-    fetchCode();
-
-    return () => {
-      active = false;
-    };
-  }, [currentFile?.path]);
 
   const onSelectionChange = useCallback(
     (ids: string[]) => {
@@ -159,7 +102,7 @@ export function CodeView({ files, name }: CodeViewProps) {
 
   if (!files?.length) {
     return (
-      <div className="flex h-svh items-center justify-center border border-dashed">
+      <div className="flex h-[var(--block-height)] items-center justify-center border border-dashed">
         <p className="text-muted-foreground text-sm">
           No code files available for this block.
         </p>
@@ -168,10 +111,8 @@ export function CodeView({ files, name }: CodeViewProps) {
   }
 
   return (
-    <div
-      aria-busy={isFetching}
-      className="fade-in flex h-svh animate-in duration-500"
-    >
+    <div className="fade-in flex h-[var(--block-height)] animate-in duration-500">
+      {/* Sidebar */}
       <div className="hidden w-64 bg-card sm:block">
         <div className="flex h-10 items-center border-b border-dashed px-4">
           <h3 className="font-mono text-muted-foreground text-sm">Files</h3>
@@ -199,7 +140,7 @@ export function CodeView({ files, name }: CodeViewProps) {
                 </TreeNodeContent>
               </TreeNode>
             )}
-            {componentFiles?.length > 0 && (
+            {componentFiles.length > 0 && (
               <TreeNode nodeId="components">
                 <TreeNodeTrigger>
                   <TreeExpander hasChildren /> <TreeIcon hasChildren />
@@ -217,7 +158,7 @@ export function CodeView({ files, name }: CodeViewProps) {
                 </TreeNodeContent>
               </TreeNode>
             )}
-            {hookFiles?.length > 0 && (
+            {hookFiles.length > 0 && (
               <TreeNode nodeId="hooks">
                 <TreeNodeTrigger>
                   <TreeExpander hasChildren /> <TreeIcon hasChildren />
@@ -239,28 +180,29 @@ export function CodeView({ files, name }: CodeViewProps) {
         </TreeProvider>
       </div>
 
+      {/* Code Viewer */}
       <div className="relative w-full sm:w-[calc(100%-16rem)] sm:border-l sm:border-dashed">
         <div className="flex h-10 items-center justify-between border-b border-dashed bg-card px-4">
           <h3 className="font-mono text-muted-foreground text-sm">
             {currentFile?.name ?? "Select a file"}
           </h3>
           <CopyButton
-            disabled={!currentCode}
+            disabled={!currentFile?.code}
             onClick={() =>
               sendGAEvent("event", "copy_code", {
                 block_name: name,
                 file_name: currentFile?.name ?? "unknown",
               })
             }
-            text={currentCode}
+            text={currentFile?.code ?? ""}
           />
         </div>
 
         <CodeBlock
           className="h-[calc(100%-2.5rem)] max-w-full overflow-auto"
-          code={currentCode}
-          isFetching={isFetching}
-          key={currentFile?.path ?? "empty"}
+          code={currentFile?.code ?? ""}
+          isFetching={false}
+          key={currentFile?.name ?? "empty"}
         />
       </div>
     </div>

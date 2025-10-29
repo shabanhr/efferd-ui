@@ -29,6 +29,9 @@
       "type": "registry:hook"
     }
   ],
+  "meta": {
+    "height": "60vh"
+  },
   "categories": [
     "header"
   ]

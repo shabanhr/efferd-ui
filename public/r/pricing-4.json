@@ -17,6 +17,9 @@
       "type": "registry:component"
     }
   ],
+  "meta": {
+    "height": "70vh"
+  },
   "categories": [
     "pricing"
   ]

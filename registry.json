@@ -93,6 +93,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "60vh"
+      },
       "categories": [
         "contact"
       ]
@@ -110,6 +113,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "40vh"
+      },
       "categories": [
         "cta"
       ]
@@ -127,6 +133,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "40vh"
+      },
       "categories": [
         "cta"
       ]
@@ -144,6 +153,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "40vh"
+      },
       "categories": [
         "cta"
       ]
@@ -161,6 +173,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "40vh"
+      },
       "categories": [
         "cta"
       ]
@@ -179,6 +194,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "40vh"
+      },
       "categories": [
         "cta"
       ]
@@ -199,6 +217,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "80vh"
+      },
       "categories": [
         "feature"
       ]
@@ -309,6 +330,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "40vh"
+      },
       "categories": [
         "footer"
       ]
@@ -330,6 +354,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "50vh"
+      },
       "categories": [
         "footer"
       ]
@@ -344,6 +371,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "50vh"
+      },
       "categories": [
         "footer"
       ]
@@ -361,6 +391,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "70vh"
+      },
       "categories": [
         "footer"
       ]
@@ -414,6 +447,9 @@
           "type": "registry:hook"
         }
       ],
+      "meta": {
+        "height": "50vh"
+      },
       "categories": [
         "header"
       ]
@@ -443,6 +479,9 @@
           "type": "registry:hook"
         }
       ],
+      "meta": {
+        "height": "50vh"
+      },
       "categories": [
         "header"
       ]
@@ -473,6 +512,9 @@
           "type": "registry:hook"
         }
       ],
+      "meta": {
+        "height": "60vh"
+      },
       "categories": [
         "header"
       ]
@@ -511,6 +553,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "50vh"
+      },
       "categories": [
         "logo-cloud"
       ]
@@ -525,6 +570,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "50vh"
+      },
       "categories": [
         "logo-cloud"
       ]
@@ -542,6 +590,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "50vh"
+      },
       "categories": [
         "logo-cloud"
       ]
@@ -560,6 +611,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "40vh"
+      },
       "categories": [
         "logo-cloud"
       ]
@@ -638,6 +692,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "80vh"
+      },
       "categories": [
         "pricing"
       ]
@@ -680,6 +737,9 @@
           "type": "registry:component"
         }
       ],
+      "meta": {
+        "height": "70vh"
+      },
       "categories": [
         "pricing"
       ]

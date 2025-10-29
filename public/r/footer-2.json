@@ -18,6 +18,9 @@
       "type": "registry:component"
     }
   ],
+  "meta": {
+    "height": "50vh"
+  },
   "categories": [
     "footer"
   ]

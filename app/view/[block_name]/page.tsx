@@ -3,10 +3,7 @@ import React from "react";
 import { BlockLoader } from "@/components/block/block-loader";
 import { constructMetadata } from "@/lib/metadata";
 import { capitalize, unslugify } from "@/lib/utils";
-import {
-  getCachedBlockByName,
-  importBlockIndex,
-} from "@/lib/utils/blocks-data";
+import { findBlockByName, importBlockIndex } from "@/lib/utils/blocks-data";
 
 export const dynamic = "force-static";
 
@@ -15,7 +12,7 @@ export async function generateMetadata({
 }: PageProps<"/view/[block_name]">) {
   const { block_name } = await params;
 
-  const block = getCachedBlockByName(block_name);
+  const block = findBlockByName(block_name);
   if (!block) {
     return null;
   }
@@ -34,7 +31,7 @@ export default async function PreviewPage({
 }: PageProps<"/view/[block_name]">) {
   const { block_name } = await params;
 
-  const block = getCachedBlockByName(block_name);
+  const block = findBlockByName(block_name);
   if (!block) {
     return notFound();
   }

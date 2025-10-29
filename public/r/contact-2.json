@@ -10,6 +10,9 @@
       "type": "registry:component"
     }
   ],
+  "meta": {
+    "height": "60vh"
+  },
   "categories": [
     "contact"
   ]

@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { BorderSeparator } from "@/components/sheard";
 import { Tweets } from "@/components/tweets";
-import { getCachedCategories } from "@/lib/utils/blocks-data";
+import { getAllCategories } from "@/lib/utils/blocks-data";
 import type { Category } from "@/types";
 
 export default function Page() {
-  const categories = getCachedCategories();
+  const categories = getAllCategories();
 
   return (
     <div className="min-h-screen">

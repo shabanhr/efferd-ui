@@ -67,6 +67,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["contact"],
+    meta: {
+      height: "60vh",
+    },
   },
   {
     name: "cta-1",
@@ -81,6 +84,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["cta"],
+    meta: {
+      height: "40vh",
+    },
   },
   {
     name: "cta-2",
@@ -95,6 +101,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["cta"],
+    meta: {
+      height: "40vh",
+    },
   },
   {
     name: "cta-3",
@@ -109,6 +118,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["cta"],
+    meta: {
+      height: "40vh",
+    },
   },
   {
     name: "cta-4",
@@ -123,6 +135,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["cta"],
+    meta: {
+      height: "40vh",
+    },
   },
   {
     name: "cta-5",
@@ -137,6 +152,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["cta"],
+    meta: {
+      height: "40vh",
+    },
   },
   {
     name: "feature-1",
@@ -152,6 +170,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["feature"],
+    meta: {
+      height: "80vh",
+    },
   },
   {
     name: "faqs-1",
@@ -240,6 +261,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["footer"],
+    meta: {
+      height: "40vh",
+    },
   },
   {
     name: "footer-2",
@@ -258,6 +282,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["footer"],
+    meta: {
+      height: "50vh",
+    },
   },
   {
     name: "footer-3",
@@ -271,6 +298,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["footer"],
+    meta: {
+      height: "50vh",
+    },
   },
   {
     name: "footer-4",
@@ -285,6 +315,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["footer"],
+    meta: {
+      height: "70vh",
+    },
   },
   {
     name: "footer-5",
@@ -330,6 +363,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["header"],
+    meta: {
+      height: "50vh",
+    },
   },
   {
     name: "header-2",
@@ -356,6 +392,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["header"],
+    meta: {
+      height: "50vh",
+    },
   },
   {
     name: "header-3",
@@ -382,6 +421,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["header"],
+    meta: {
+      height: "60vh",
+    },
   },
   {
     name: "image-gallery-1",
@@ -414,6 +456,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["logo-cloud"],
+    meta: {
+      height: "50vh",
+    },
   },
   {
     name: "logo-cloud-2",
@@ -427,6 +472,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["logo-cloud"],
+    meta: {
+      height: "50vh",
+    },
   },
   {
     name: "logo-cloud-3",
@@ -443,6 +491,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["logo-cloud"],
+    meta: {
+      height: "50vh",
+    },
   },
   {
     name: "logo-cloud-4",
@@ -460,6 +511,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["logo-cloud"],
+    meta: {
+      height: "40vh",
+    },
   },
   {
     name: "not-found-1",
@@ -521,6 +575,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["pricing"],
+    meta: {
+      height: "80vh",
+    },
   },
   {
     name: "pricing-3",
@@ -554,6 +611,9 @@ export const blocks: RegistryItem[] = [
       },
     ],
     categories: ["pricing"],
+    meta: {
+      height: "70vh",
+    },
   },
   {
     name: "testimonials-1",

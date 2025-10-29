@@ -6,7 +6,7 @@ import { BlockBox } from "@/components/block";
 import { DashedLines } from "@/components/sheard";
 import { constructMetadata } from "@/lib/metadata";
 import { capitalize, unslugify } from "@/lib/utils";
-import { getCachedBlocksByCategory } from "@/lib/utils/blocks-data";
+import { getBlocksByCategory } from "@/lib/utils/blocks-data";
 
 export const dynamic = "force-static";
 
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps<"/[cat]">) {
 export default async function CategoryPage({ params }: PageProps<"/[cat]">) {
   const { cat } = await params;
 
-  const categoryBlocks = getCachedBlocksByCategory(cat);
+  const categoryBlocks = getBlocksByCategory(cat);
 
   if (categoryBlocks?.length === 0) {
     return notFound();
@@ -57,12 +57,12 @@ export default async function CategoryPage({ params }: PageProps<"/[cat]">) {
         </p>
       </div>
 
-      <DashedLines className="h-6 [mask-image:linear-gradient(to_bottom,transparent_2px,var(--background))]" />
+      <DashedLines className="h-8 [mask-image:linear-gradient(to_bottom,transparent,var(--background),var(--background))]" />
 
-      {categoryBlocks.map((block, index) => (
-        <React.Fragment key={index}>
-          <BlockBox block={block} key={index} />
-          <DashedLines className="h-12" />
+      {categoryBlocks.map((block) => (
+        <React.Fragment key={block.name}>
+          <BlockBox block={block} />
+          <DashedLines className="h-16" />
         </React.Fragment>
       ))}
     </>

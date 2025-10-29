@@ -1,4 +1,5 @@
 "use client";
+
 import { toJsxRuntime } from "hast-util-to-jsx-runtime";
 import { useTheme } from "next-themes";
 import { type JSX, useEffect, useState } from "react";
@@ -6,7 +7,8 @@ import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import type { BundledLanguage, BundledTheme } from "shiki/bundle/web";
 import { codeToHast } from "shiki/bundle/web";
 import { cn } from "@/lib/utils";
-import { BlockLoader } from "./block-loader";
+
+const LANG: BundledLanguage = "tsx";
 
 async function highlight(
   code: string,
@@ -17,59 +19,65 @@ async function highlight(
   return toJsxRuntime(hast, { Fragment, jsx, jsxs }) as JSX.Element;
 }
 
-type CodeBlockProps = {
-  code: string;
-  className?: string;
-  isFetching?: boolean;
-};
-
-const LANG = "tsx";
-
 async function getHighlightedCode(code: string, theme: string) {
-  if (!code) {
-    return null;
+  if (!code?.trim()) {
+    return <pre>{"// No code"}</pre>;
   }
-
   try {
     return await highlight(
       code,
       LANG,
       theme === "dark" ? "github-dark" : "github-light"
     );
-  } catch (_err) {
-    return <pre>Error loading code</pre>;
+  } catch {
+    return <pre>{"// Failed to highlight"}</pre>;
   }
 }
 
-export default function CodeBlock(props: CodeBlockProps) {
-  const { code, className, isFetching } = props;
+type CodeBlockProps = {
+  code: string;
+  className?: string;
+  isFetching?: boolean;
+};
+
+export default function CodeBlock({ code, className }: CodeBlockProps) {
+  const { theme = "light" } = useTheme();
   const [content, setContent] = useState<JSX.Element | null>(null);
-  const { theme } = useTheme();
 
+  // Load syntax highlighting asynchronously
   useEffect(() => {
-    let active = true;
+    let cancelled = false;
 
-    async function loadAndHighlight() {
-      const highlighted = await getHighlightedCode(code, theme || "light");
-      if (active) {
+    async function highlightCode() {
+      const highlighted = await getHighlightedCode(code, theme);
+      if (!cancelled) {
         setContent(highlighted);
       }
     }
 
-    loadAndHighlight();
+    highlightCode();
     return () => {
-      active = false;
+      cancelled = true;
     };
   }, [code, theme]);
 
+  // First render: show plain code instantly
+  // Then replace with highlighted content once ready
   return (
     <div
       className={cn(
-        "[&_pre]:!bg-muted/50 dark:[&_pre]:!bg-muted/20 [&_code]:font-mono [&_code]:text-[13px]/2 [&_pre]:h-full [&_pre]:max-h-(--pre-max-height) [&_pre]:min-h-12 [&_pre]:overflow-auto [&_pre]:p-4 [&_pre]:leading-snug",
+        "[&_pre]:!bg-muted/50 dark:[&_pre]:!bg-muted/20",
+        "[&_code]:font-mono [&_code]:text-[13px]/2",
+        "[&_pre]:h-full [&_pre]:max-h-(--pre-max-height) [&_pre]:min-h-12",
+        "[&_pre]:overflow-auto [&_pre]:p-4 [&_pre]:leading-snug",
         className
       )}
     >
-      {isFetching ? <BlockLoader /> : content}
+      {content ?? (
+        <pre>
+          <code>{code}</code>
+        </pre>
+      )}
     </div>
   );
 }

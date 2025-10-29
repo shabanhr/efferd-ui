@@ -19,14 +19,14 @@ export function BlockPreview({ previewMode, children }: BlockPreviewProps) {
       <div
         aria-hidden="true"
         className={cn(
-          "-z-10 absolute inset-0 size-full bg-muted dark:bg-muted/20",
-          "bg-[radial-gradient(color-mix(in_oklab,--theme(--color-muted-foreground/.80)30%,transparent)_1px,transparent_1px)]",
-          "bg-[size:20px_20px]"
+          "absolute inset-0 size-full bg-muted/50 dark:bg-muted/20",
+          "bg-[radial-gradient(color-mix(in_oklab,--theme(--color-foreground/.4)30%,transparent)_1px,transparent_1px)]",
+          "bg-[size:24px_24px]"
         )}
       />
       <PanelGroup direction="horizontal">
         <Panel
-          className="min-h-svh bg-background lg:border-r lg:border-dashed"
+          className="h-[var(--block-height)] bg-background lg:border-r lg:border-dashed"
           defaultSize={DEFAULTSIZE}
           minSize={30}
           order={1}

@@ -3,8 +3,6 @@ import { blocks } from "@/config/blocks";
 import { SITE_HOME_URL } from "@/config/site";
 import { getAllCategories } from "@/lib/utils/blocks-data";
 
-export const dynamic = "force-dynamic";
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const date = new Date().toISOString();
   const cats = getAllCategories();

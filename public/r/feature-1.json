@@ -16,6 +16,9 @@
       "type": "registry:component"
     }
   ],
+  "meta": {
+    "height": "80vh"
+  },
   "categories": [
     "feature"
   ]

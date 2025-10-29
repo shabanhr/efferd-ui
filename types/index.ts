@@ -2,16 +2,11 @@ import type { BundledLanguage } from "shiki/bundle/web";
 
 export type PreviewMode = "preview" | "code";
 
-export type CodeFile = {
-  name: string;
-  lang: BundledLanguage;
-  code: string;
-};
-
 export type BlockFile = {
   type: "page" | "component" | "hook";
-  path: string;
   name: string;
+  code: string;
+  lang: BundledLanguage;
 };
 
 export type Block = {
@@ -20,6 +15,7 @@ export type Block = {
   block_number: string;
   description: string;
   files: BlockFile[];
+  height: string;
 };
 
 export type Category = {
