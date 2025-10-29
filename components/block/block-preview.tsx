@@ -26,7 +26,7 @@ export function BlockPreview({ previewMode, children }: BlockPreviewProps) {
       />
       <PanelGroup direction="horizontal">
         <Panel
-          className="h-[var(--block-height)] bg-background lg:border-r lg:border-dashed"
+          className="h-[var(--block-height)] lg:border-r lg:border-dashed"
           defaultSize={DEFAULTSIZE}
           minSize={30}
           order={1}

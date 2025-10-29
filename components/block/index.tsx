@@ -74,7 +74,7 @@ export function BlockBox({ block }: BlockPreviewProps) {
 
       {/* Preview */}
       <BlockPreview previewMode={previewMode}>
-        <div className="relative h-full" ref={iframeContainerRef}>
+        <div className="relative h-full bg-background" ref={iframeContainerRef}>
           {shouldLoadIframe ? (
             <IframeRenderer
               ariaLabel={`${name}-block-preview`}
