@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: PageProps<"/[cat]">) {
   const catagoryName = capitalize(unslugify(cat)) as string;
 
   return constructMetadata({
-    title: `${catagoryName} Blocks`,
-    description: `Discover ${catagoryName} blocks — ready to copy, customize, and drop into your next Shadcn UI project.`,
+    title: `Free Shadcn/UI ${catagoryName} Blocks`,
+    description: `Discover ${catagoryName} blocks — ready to copy, customize, and drop into your Shadcn/UI project.`,
     canonicalUrl: `/${cat}`,
     keywords: [catagoryName],
   });
