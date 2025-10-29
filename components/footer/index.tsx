@@ -3,8 +3,8 @@ import { MY_HANDLE, SITE_NAME } from "@/config/site";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-dashed">
-      <div className="cpx container flex items-center justify-between py-5 text-xs md:text-sm">
+    <footer className="border-t border-dashed bg-card dark:bg-card/50">
+      <div className="cpx container flex items-center justify-between py-6 text-xs md:text-sm">
         <p className="flex items-center gap-1 text-muted-foreground">
           <span>Built by</span>
           <Link

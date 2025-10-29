@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export default function AppLayout({ children }: LayoutProps<"/">) {
   return (
-    <div className="relative flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-secondary/40 supports-[overflow:clip]:overflow-clip dark:bg-background">
       <SiteHeader />
       <main
         className={cn(
