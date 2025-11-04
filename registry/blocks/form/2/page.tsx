@@ -3,7 +3,7 @@ import { SubmitProjectForm } from "./submit-project-form";
 
 export default function Page() {
   return (
-    <div className="relative flex min-h-screen w-full items-center justify-center p-4">
+    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden p-4">
       {/* Radial spotlight */}
       <div
         aria-hidden="true"

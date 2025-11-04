@@ -29,14 +29,6 @@ export function SubmitProjectForm() {
         className="-right-[12.5px] -bottom-[12.5px] absolute size-6"
         strokeWidth={0.5}
       />
-      <PlusIcon
-        className="-right-[12.5px] -top-[12.5px] absolute size-6"
-        strokeWidth={0.5}
-      />
-      <PlusIcon
-        className="-left-[12.5px] -bottom-[12.5px] absolute size-6"
-        strokeWidth={0.5}
-      />
 
       <div className="rounded-md border border-border/60 p-[2px]">
         <div className="items-left flex flex-col justify-center gap-1 rounded-md border bg-card p-4 shadow-xs">
