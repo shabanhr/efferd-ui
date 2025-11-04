@@ -31,7 +31,7 @@ export function SettingsForm() {
         <FieldGroup className="gap-5">
           <div className="rounded-xl border border-border/60 p-0.5">
             <Field
-              className="rounded-xl border bg-card/50 px-4 py-8 shadow"
+              className="rounded-xl border bg-card px-4 py-8 shadow-xs dark:bg-card/50"
               orientation="responsive"
             >
               <FieldContent>
@@ -51,7 +51,7 @@ export function SettingsForm() {
           </div>
           <div className="rounded-xl border border-border/60 p-0.5">
             <Field
-              className="rounded-xl border bg-card/50 px-4 py-8 shadow"
+              className="rounded-xl border bg-card px-4 py-8 shadow-xs dark:bg-card/50"
               orientation="responsive"
             >
               <FieldContent>
@@ -79,7 +79,7 @@ export function SettingsForm() {
           </div>
           <div className="rounded-xl border border-border/60 p-0.5">
             <Field
-              className="rounded-xl border bg-card/50 px-4 py-8 shadow"
+              className="rounded-xl border bg-card px-4 py-8 shadow-xs dark:bg-card/50"
               orientation="responsive"
             >
               <FieldContent>
@@ -111,7 +111,7 @@ export function SettingsForm() {
           </div>
           <div className="rounded-xl border border-border/60 p-0.5">
             <Field
-              className="rounded-xl border bg-card/50 px-4 py-8 shadow"
+              className="rounded-xl border bg-card px-4 py-8 shadow-xs dark:bg-card/50"
               orientation="responsive"
             >
               <FieldContent>
