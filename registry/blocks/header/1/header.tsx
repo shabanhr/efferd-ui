@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { createPortal } from "react-dom";
-import { WordmarkIcon } from "@/components/logo";
+import { Logo } from "@/components/logo";
 import { MenuToggleIcon } from "@/components/menu-toggle-icon";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useScroll } from "@/hooks/use-scroll";
@@ -46,7 +46,7 @@ export function Header() {
     >
       <nav className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4">
         <div className="rounded-md p-2 hover:bg-accent">
-          <WordmarkIcon className="h-4" />
+          <Logo className="h-4" />
         </div>
         <div className="hidden items-center gap-2 md:flex">
           {links.map((link, i) => (

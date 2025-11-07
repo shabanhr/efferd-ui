@@ -8,7 +8,7 @@ import {
 import { motion, useReducedMotion } from "motion/react";
 import type React from "react";
 import type { ComponentProps, ReactNode } from "react";
-import { WordmarkIcon } from "@/components/logo";
+import { Logo } from "@/components/logo";
 
 type FooterLink = {
   title: string;
@@ -67,7 +67,7 @@ export function Footer() {
 
       <div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
         <AnimatedContainer className="space-y-4">
-          <WordmarkIcon className="h-4" />
+          <Logo className="h-4" />
           <p className="mt-8 text-muted-foreground text-sm md:mt-0">
             &copy; {new Date().getFullYear()} efferd, All rights reserved
           </p>

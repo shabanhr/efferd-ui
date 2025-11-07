@@ -6,7 +6,7 @@ import {
   TwitterIcon,
   YoutubeIcon,
 } from "lucide-react";
-import { WordmarkIcon } from "@/components/logo";
+import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -95,7 +95,7 @@ export function Footer() {
         <div className="grid max-w-5xl grid-cols-6 gap-6 p-4">
           <div className="col-span-6 flex flex-col gap-4 pt-5 md:col-span-4">
             <a className="w-max" href="#">
-              <WordmarkIcon className="h-5" />
+              <Logo className="h-5" />
             </a>
             <p className="max-w-sm text-balance font-mono text-muted-foreground text-sm">
               A comprehensive financial technology platform.

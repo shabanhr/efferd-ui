@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import { createPortal } from "react-dom";
-import { WordmarkIcon } from "@/components/logo";
+import { Logo } from "@/components/logo";
 import { MenuToggleIcon } from "@/components/menu-toggle-icon";
 import { Button } from "@/components/ui/button";
 import {
@@ -64,7 +64,7 @@ export function Header() {
       <nav className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4">
         <div className="flex items-center gap-5">
           <a className="rounded-md p-2 hover:bg-accent" href="#">
-            <WordmarkIcon className="h-4" />
+            <Logo className="h-4" />
           </a>
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>

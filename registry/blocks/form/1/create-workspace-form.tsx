@@ -1,5 +1,5 @@
 import { CircleCheckIcon } from "lucide-react";
-import { WordmarkIcon } from "@/components/logo";
+import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup, ButtonGroupText } from "@/components/ui/button-group";
 import {
@@ -20,7 +20,7 @@ export function CreateWorkspaceForm() {
   return (
     <div className="w-full max-w-md rounded-xl border bg-background shadow-sm">
       <div className="flex flex-col items-center justify-center gap-6 rounded-t-xl border-b bg-card/60 py-12">
-        <WordmarkIcon className="h-5" />
+        <Logo className="h-5" />
         <div className="flex flex-col items-center space-y-1">
           <h2 className="font-medium text-2xl">Create your workspace</h2>
           <a className="text-muted-foreground underline" href="#">

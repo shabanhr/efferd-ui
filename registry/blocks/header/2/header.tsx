@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { createPortal } from "react-dom";
-import { WordmarkIcon } from "@/components/logo";
+import { Logo } from "@/components/logo";
 import { MenuToggleIcon } from "@/components/menu-toggle-icon";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useScroll } from "@/hooks/use-scroll";
@@ -60,7 +60,7 @@ export function Header() {
         )}
       >
         <a className="rounded-md p-2 hover:bg-accent" href="#">
-          <WordmarkIcon className="h-4" />
+          <Logo className="h-4" />
         </a>
         <div className="hidden items-center gap-2 md:flex">
           {links.map((link, i) => (

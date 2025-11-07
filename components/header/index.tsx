@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { GithubIcon, XIcon } from "@/components/icons";
-import { WordmarkIcon } from "@/components/logo";
+import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { MY_HANDLE, SITE_NAME } from "@/config/site";
@@ -10,10 +10,10 @@ export function SiteHeader() {
     <header className="border-b border-dashed bg-card dark:bg-card/50">
       <div className="cpx container flex h-14 items-center justify-between py-2">
         <Link
-          className="cursor-pointer rounded-md border border-dashed p-2 hover:bg-accent"
+          className="h-8 cursor-pointer place-content-center rounded-md border border-dashed px-2 hover:bg-accent"
           href="/"
         >
-          <WordmarkIcon className="h-4" />
+          <Logo className="h-4.5" />
           <span className="sr-only">{SITE_NAME}</span>
         </Link>
         <div className="flex items-center gap-2">

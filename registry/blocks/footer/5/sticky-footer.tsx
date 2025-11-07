@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import type React from "react";
-import { WordmarkIcon } from "@/components/logo";
+import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 
 type FooterLink = {
@@ -39,7 +39,7 @@ export function StickyFooter() {
             </div>
             <div className="flex flex-col gap-8 pt-12 md:flex-row">
               <AnimatedContainer className="w-full min-w-2xs max-w-sm space-y-4">
-                <WordmarkIcon className="h-5" />
+                <Logo className="h-5" />
                 <p className="mt-8 text-muted-foreground text-sm md:mt-0">
                   Innovative fintech empowering businesses with seamless
                   payments, lending, and financial infrastructure worldwide.
