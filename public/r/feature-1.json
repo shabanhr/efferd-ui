@@ -7,7 +7,7 @@
     "motion"
   ],
   "registryDependencies": [
-    "@magicui/grid-pattern"
+    "https://magicui.design/r/grid-pattern.json"
   ],
   "files": [
     {

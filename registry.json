@@ -24,7 +24,7 @@
       "description": "Modern auth page with particle background and social login buttons.",
       "registryDependencies": [
         "button",
-        "@magicui/particles"
+        "https://magicui.design/r/particles.json"
       ],
       "files": [
         {
@@ -209,7 +209,7 @@
         "motion"
       ],
       "registryDependencies": [
-        "@magicui/grid-pattern"
+        "https://magicui.design/r/grid-pattern.json"
       ],
       "files": [
         {
@@ -840,7 +840,7 @@
         "motion"
       ],
       "registryDependencies": [
-        "@magicui/grid-pattern"
+        "https://magicui.design/r/grid-pattern.json"
       ],
       "files": [
         {

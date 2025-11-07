@@ -6,7 +6,7 @@ export const blocks: RegistryItem[] = [
     type: "registry:block",
     description:
       "Modern auth page with particle background and social login buttons.",
-    registryDependencies: ["button", "@magicui/particles"],
+    registryDependencies: ["button", "https://magicui.design/r/particles.json"],
     files: [
       {
         path: "blocks/auth/1/auth-page.tsx",
@@ -161,7 +161,7 @@ export const blocks: RegistryItem[] = [
     type: "registry:block",
     description:
       "Minimal feature card with icon, title, and subtle grid background.",
-    registryDependencies: ["@magicui/grid-pattern"],
+    registryDependencies: ["https://magicui.design/r/grid-pattern.json"],
     dependencies: ["motion"],
     files: [
       {
@@ -703,7 +703,7 @@ export const blocks: RegistryItem[] = [
     description:
       "Responsive testimonial grid with smooth motion reveal, subtle gradients, and elegant card design.",
     dependencies: ["motion"],
-    registryDependencies: ["@magicui/grid-pattern"],
+    registryDependencies: ["https://magicui.design/r/grid-pattern.json"],
     files: [
       {
         path: "blocks/testimonials/2/testimonials-section.tsx",

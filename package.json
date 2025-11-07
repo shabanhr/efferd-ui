@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "build:registry": "npx tsx ./scripts/build-registry.mts && npx shadcn build"
+    "b:r": "npx tsx ./scripts/build-registry.mts && npx shadcn build"
   },
   "dependencies": {
     "@next/third-parties": "^15.5.4",
