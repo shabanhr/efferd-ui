@@ -6,9 +6,15 @@ import { BlockBox } from "@/components/block";
 import { DashedLines } from "@/components/sheard";
 import { constructMetadata } from "@/lib/metadata";
 import { capitalize, unslugify } from "@/lib/utils";
-import { getBlocksByCategory } from "@/lib/utils/blocks-data";
+import { getAllCategories, getBlocksByCategory } from "@/lib/utils/blocks-data";
 
-export const dynamic = "force-static";
+export const revalidate = false;
+export function generateStaticParams() {
+  const cats = getAllCategories();
+  return cats.map((cat) => ({
+    cat: cat.id,
+  }));
+}
 
 export async function generateMetadata({ params }: PageProps<"/[cat]">) {
   const { cat } = await params;

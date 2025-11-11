@@ -5,6 +5,7 @@ import { constructMetadata } from "@/lib/metadata";
 import { capitalize, unslugify } from "@/lib/utils";
 import { findBlockByName, importBlockIndex } from "@/lib/utils/blocks-data";
 
+export const revalidate = false;
 export const dynamic = "force-static";
 
 export async function generateMetadata({
